@@ -1,10 +1,14 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import HomeScreen from './app/screens/HomeScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
+import Navigator from "./app/routes/homeStack";
 
 function App() {
   return (
-      <WelcomeScreen />
+    <NavigationContainer>
+      <Navigator />
+    </NavigationContainer>
   );
 }
 

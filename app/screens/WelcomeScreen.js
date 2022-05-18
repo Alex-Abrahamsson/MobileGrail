@@ -11,11 +11,36 @@ import {
   Image,
 } from "react-native";
 
-import { colors } from "../config/colors";
+import colors from "../config/colors";
 
-function WelcomeScreen() {
+function WelcomeScreen({ navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const users = [
+      {Username: "Alex", Password: "1", score: 666},
+      {Username: "Marja", Password: "Plutten123", score: 4},
+      {Username: "Pigge", Password: "Pigge30", score: 4320}
+  ];
+
+  const handleLogin = () => {
+    let userFound = false;
+    let passMatch = false;
+    users.forEach((element) => {
+      if (element.Username == email) {
+        userFound = true;
+        if (element.Password == password) {
+          passMatch = true;
+          navigation.navigate("Home", { user: element });
+        }
+      }
+    });
+    if (userFound === false) {
+        alert("User not found");
+    }else if (passMatch === false) {
+        alert("Wrong Password!")
+    }
+  };
 
   return (
     <ImageBackground
@@ -27,7 +52,7 @@ function WelcomeScreen() {
         <View style={styles.inputView}>
           <TextInput
             style={styles.TextInput}
-            placeholder="Email"
+            placeholder="UserName"
             placeholderTextColor="white"
             onChangeText={(email) => setEmail(email)}
           />
@@ -47,7 +72,7 @@ function WelcomeScreen() {
           <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity onPress={handleLogin} style={styles.loginBtn}>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
       </SafeAreaView>
@@ -64,13 +89,13 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? 40 : 0,
     flex: 1,
     alignItems: "center",
-    paddingTop: 200,
+    paddingTop: 100,
   },
   logo: {
 
   },
   inputView: {
-    backgroundColor: "#0008",
+    backgroundColor: colors.Faded,
     borderRadius: 8,
     width: "70%",
     height: 45,
@@ -83,6 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     marginLeft: 20,
+    color: colors.RuneWords,
   },
   forgot_button: {
     height: 30,
@@ -98,7 +124,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     backgroundColor: "#0008",
     borderWidth: 2,
-    borderColor: "#8A6227",
+    borderColor: colors.GoldBorder,
   },
   loginText: {
     color: "white",

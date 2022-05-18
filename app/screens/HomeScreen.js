@@ -16,7 +16,8 @@ const score = 0;
 const btnBackground = "../assets/GrailBg.jpg";
 const backgroundImage = "../assets/GrailBg.jpg";
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
+    const loggedIn = navigation.getParam("user");
   return (
     <ImageBackground
       source={require(backgroundImage)}
@@ -24,9 +25,9 @@ export default function HomeScreen() {
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.headText}>Welcome {name}!</Text>
+          <Text style={styles.headText}>Welcome {loggedIn.Username}!</Text>
           <View style={styles.scoreWindow}>
-            <Text style={styles.textz}>Score: {score}</Text>
+            <Text style={styles.textz}>Score: {loggedIn.score}</Text>
           </View>
         </View>
 
