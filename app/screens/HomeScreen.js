@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   StyleSheet,
   Text,
@@ -15,7 +16,10 @@ const btnBackground = "../assets/GrailBg.jpg";
 const backgroundImage = "../assets/GrailBg.jpg";
 
 export default function HomeScreen({navigation}) {
-    const loggedIn = navigation.getParam("user");
+    const userName = navigation.getParam("Username");
+    const userScore = navigation.getParam("Score");
+    console.log(userName);
+
   return (
     <ImageBackground
       source={require(backgroundImage)}
@@ -23,9 +27,9 @@ export default function HomeScreen({navigation}) {
     >
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.headText}>Welcome {loggedIn.Username}!</Text>
+          <Text style={styles.headText}>Welcome {userName}!</Text>
           <View style={styles.scoreWindow}>
-            <Text style={styles.textz}>Score: {loggedIn.score}</Text>
+            <Text style={styles.textz}>Score: {userScore}</Text>
           </View>
         </View>
 
@@ -38,7 +42,7 @@ export default function HomeScreen({navigation}) {
             resizeMode="cover"
           >
             <Pressable
-              onPress={() => navigation.navigate("Uniques")}
+              onPress={() => navigation.navigate("Uniques", userName)}
               style={styles.mainButtons}
             >
               <Text style={[styles.buttonText, { color: colors.Uniques }]}>

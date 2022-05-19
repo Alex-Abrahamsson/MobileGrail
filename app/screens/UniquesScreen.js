@@ -1,4 +1,3 @@
-import React from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -15,10 +14,11 @@ import colors from "../config/colors";
 
 const backgroundImage = "../assets/GrailBg.jpg";
 
-function UniquesScreen({ navigation }) {
+function UniquesScreen( {navigation} ) {
+    const userName = navigation.state.params;
 
     const handleItemClick = (item) => {
-        navigation.navigate("Unique"+item);
+        navigation.navigate("Unique"+item, userName);
     }
 
 

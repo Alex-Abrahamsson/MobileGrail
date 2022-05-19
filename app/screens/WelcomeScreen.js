@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   ImageBackground,
   StyleSheet,
@@ -17,29 +18,42 @@ function WelcomeScreen({ navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const users = [
-      {Username: "", Password: "", score: 666},
-      {Username: "Marja", Password: "Plutten123", score: 4},
-      {Username: "Pigge", Password: "Pigge30", score: 4320}
-  ];
+
+  const registerUser = async (userName, password) => {
+    const theUser = [{Username: userName, Password: password, Score: 0}]
+    try {
+      const jsonValue = JSON.stringify(theUser);
+      await AsyncStorage.setItem(email, jsonValue);
+    }catch (err) {
+      console.log(err);
+    }
+  }
+
+  const handleRegister = (userName, password) => {
+    registerUser(userName, password);
+  }
+
+  const getUser = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(email)
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    }catch (err){
+      console.log("Error loading");
+    }
+  }
 
   const handleLogin = () => {
     let userFound = false;
     let passMatch = false;
-    users.forEach((element) => {
-      if (element.Username == email) {
+    Promise.resolve(getUser()).then(function(theUser){theUser.forEach(element => {
+      if (element !== null) {
         userFound = true;
-        if (element.Password == password) {
+        if (element.Password === password) {
           passMatch = true;
-          navigation.navigate("Home", { user: element });
+          navigation.navigate("Home", element)
         }
       }
-    });
-    if (userFound === false) {
-        alert("User not found");
-    }else if (passMatch === false) {
-        alert("Wrong Password!")
-    }
+    })});
   };
 
   return (
@@ -74,6 +88,10 @@ function WelcomeScreen({ navigation}) {
 
         <TouchableOpacity onPress={handleLogin} style={styles.loginBtn}>
           <Text style={styles.loginText}>LOGIN</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => handleRegister(email, password)} style={styles.loginBtn}>
+          <Text style={styles.loginText}>Register</Text>
         </TouchableOpacity>
       </SafeAreaView>
       <StatusBar style="light" />

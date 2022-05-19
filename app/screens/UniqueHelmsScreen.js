@@ -11,10 +11,24 @@ import {
   SectionList,
 } from "react-native";
 import colors from "../config/colors";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const backgroundImage = "../assets/GrailBg.jpg";
 
-function UniqueHelmsScreen() {
+function UniqueHelmsScreen({navigation}) {
+  const userName = navigation.state.params;
+
+  const handleItemPress = async (item) => {
+    let newScore = 0;
+    const jsonValue = await AsyncStorage.getItem(userName)
+    const balle = JSON.parse(jsonValue);
+    balle.forEach(element => {
+      const jasonValue = JSON.stringify(element);
+      AsyncStorage.setItem(element.Username, jasonValue)
+    });
+  }
+
+
   return (
     <ImageBackground
       source={require(backgroundImage)}
@@ -26,10 +40,7 @@ function UniqueHelmsScreen() {
           sections={[
             { Title: "A", data: ["Andariel's Visage"] },
             { Title: "B", data: ["Biggin's Bonnet", "Blackhorn's Face"] },
-            {
-              Title: "C",
-              data: ["Coif of Glory", "Crown of Thieves", "Crown of Ages"],
-            },
+            { Title: "C", data: ["Coif of Glory", "Crown of Thieves", "Crown of Ages"],},
             { Title: "D", data: ["Duskdeep", "Darksight Helm"] },
             { Title: "G", data: ["Giant Skull"] },
             { Title: "H", data: ["Howltusk", "Harlequin Crest"] },
@@ -39,14 +50,11 @@ function UniqueHelmsScreen() {
             { Title: "S", data: ["Stealskull", "Steel Shade"] },
             { Title: "T", data: ["Tarnhelm", "The Face of Horror"] },
             { Title: "U", data: ["Undead Crown", "The Face of Horror"] },
-            {
-              Title: "V",
-              data: ["Valkyrie Wing", "Vampire Gaze", "Veil of Steel"],
-            },
+            { Title: "V", data: ["Valkyrie Wing", "Vampire Gaze", "Veil of Steel"],},
             { Title: "W", data: ["Wormskull", "The Face of Horror"] },
           ]}
           renderItem={({ item }) => (
-            <Pressable style={styles.itemPressable}>
+            <Pressable onPress={() => handleItemPress(item)} style={styles.itemPressable}>
               <Text style={styles.itemTxT}>{item}</Text>
             </Pressable>
           )}
