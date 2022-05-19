@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   logo: {
-
+    width:250,
+    marginBottom: 20,
   },
   inputView: {
     backgroundColor: colors.Faded,

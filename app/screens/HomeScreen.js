@@ -78,9 +78,6 @@ export default function HomeScreen({navigation}) {
           </ImageBackground>
         </View>
 
-        <View style={styles.footer}>
-          <Text style={styles.textz}>Footer</Text>
-        </View>
         <StatusBar style="light" />
       </SafeAreaView>
     </ImageBackground>

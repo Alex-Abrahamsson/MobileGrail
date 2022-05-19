@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -10,19 +10,11 @@ import {
   ImageBackground,
   SectionList,
 } from "react-native";
-
 import colors from "../config/colors";
 
 const backgroundImage = "../assets/GrailBg.jpg";
 
-function UniquesScreen({ navigation }) {
-
-    const handleItemClick = (item) => {
-        navigation.navigate("Unique"+item);
-    }
-
-
-
+function UniqueHelmsScreen() {
   return (
     <ImageBackground
       source={require(backgroundImage)}
@@ -32,46 +24,29 @@ function UniquesScreen({ navigation }) {
         <SectionList
           style={styles.sectionList}
           sections={[
+            { Title: "A", data: ["Andariel's Visage"] },
+            { Title: "B", data: ["Biggin's Bonnet", "Blackhorn's Face"] },
             {
-              Title: "Armor",
-              data: ["Helms", "Armor", "Shields", "Gloves", "Boots", "Belts"],
+              Title: "C",
+              data: ["Coif of Glory", "Crown of Thieves", "Crown of Ages"],
             },
+            { Title: "D", data: ["Duskdeep", "Darksight Helm"] },
+            { Title: "G", data: ["Giant Skull"] },
+            { Title: "H", data: ["Howltusk", "Harlequin Crest"] },
+            { Title: "N", data: ["Nightwing's Veil"] },
+            { Title: "P", data: ["Peasant Crown"] },
+            { Title: "R", data: ["Rockstopper"] },
+            { Title: "S", data: ["Stealskull", "Steel Shade"] },
+            { Title: "T", data: ["Tarnhelm", "The Face of Horror"] },
+            { Title: "U", data: ["Undead Crown", "The Face of Horror"] },
             {
-              Title: "Weapons",
-              data: [
-                "Axes",
-                "Bows",
-                "Crossbows",
-                "Daggers",
-                "Maces",
-                "Polearms",
-                "Scepters",
-                "Spears",
-                "Staves",
-                "Swords",
-                "Throwning Weapons",
-                "Wands",
-              ],
+              Title: "V",
+              data: ["Valkyrie Wing", "Vampire Gaze", "Veil of Steel"],
             },
-            {
-              Title: "Jewlery",
-              data: ["Rings", "Amulets", "Charms", "Circlets", "Jewels"],
-            },
-            {
-              Title: "Class-Specific",
-              data: [
-                "Amazon",
-                "Assassin",
-                "Necromancer",
-                "Barbarian",
-                "Sorceress",
-                "Druid",
-                "Paladin",
-              ],
-            },
+            { Title: "W", data: ["Wormskull", "The Face of Horror"] },
           ]}
           renderItem={({ item }) => (
-            <Pressable onPress={() => handleItemClick(item)} style={styles.itemPressable}>
+            <Pressable style={styles.itemPressable}>
               <Text style={styles.itemTxT}>{item}</Text>
             </Pressable>
           )}
@@ -114,10 +89,10 @@ const styles = StyleSheet.create({
   itemPressable: {
     alignItems: "center",
   },
-  sectionList:{
-      width: "100%",
-      marginBottom: 50,
-  }
+  sectionList: {
+    width: "100%",
+    marginBottom: 50,
+  },
 });
 
-export default UniquesScreen;
+export default UniqueHelmsScreen;
