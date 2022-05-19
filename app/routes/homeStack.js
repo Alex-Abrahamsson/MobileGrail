@@ -4,6 +4,7 @@ import colors from "../config/colors";
 
 import HomeScreen from "../screens/HomeScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
+import UniquesScreen from "../screens/UniquesScreen";
 
 const screens = {
   Welcome: {
@@ -15,6 +16,13 @@ const screens = {
   },
   Home: {
     screen: HomeScreen,
+    headerMode: "none",
+    navigationOptions: {
+      header: null,
+    },
+  },
+  Uniques: {
+    screen: UniquesScreen,
     headerMode: "none",
     navigationOptions: {
       header: null,

@@ -18,7 +18,7 @@ function WelcomeScreen({ navigation}) {
   const [password, setPassword] = useState("");
 
   const users = [
-      {Username: "Alex", Password: "1", score: 666},
+      {Username: "", Password: "", score: 666},
       {Username: "Marja", Password: "Plutten123", score: 4},
       {Username: "Pigge", Password: "Pigge30", score: 4320}
   ];

@@ -11,8 +11,6 @@ import {
 
 import colors from "../config/colors";
 
-const name = "Alex";
-const score = 0;
 const btnBackground = "../assets/GrailBg.jpg";
 const backgroundImage = "../assets/GrailBg.jpg";
 
@@ -40,7 +38,7 @@ export default function HomeScreen({navigation}) {
             resizeMode="cover"
           >
             <Pressable
-              onPress={() => alert("Uniques")}
+              onPress={() => navigation.navigate("Uniques")}
               style={styles.mainButtons}
             >
               <Text style={[styles.buttonText, { color: colors.Uniques }]}>
