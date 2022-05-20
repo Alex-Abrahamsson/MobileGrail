@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   StyleSheet,
   Text,
@@ -15,11 +16,24 @@ import colors from "../config/colors";
 const backgroundImage = "../assets/GrailBg.jpg";
 
 function UniquesScreen( {navigation} ) {
-    const userName = navigation.state.params;
+  const userName = navigation.getParam("Username");
+  console.log(userName);
 
-    const handleItemClick = (item) => {
-        navigation.navigate("Unique"+item, userName);
+  const getUser = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(userName);
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (err) {
+      console.log("Error loading in UNIQUES SCREEN");
     }
+  };
+
+  const handleItemClick = (item) => {
+    Promise.resolve(getUser()).then(function(theUser){theUser.forEach(element => {
+      console.log("Unique" + item, element);
+      navigation.navigate("Unique"+item, element)
+    });})
+  }
 
 
 
@@ -81,7 +95,6 @@ function UniquesScreen( {navigation} ) {
             </View>
           )}
         />
-
         <StatusBar style="light" />
       </SafeAreaView>
     </ImageBackground>

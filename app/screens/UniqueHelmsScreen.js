@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   StyleSheet,
   Text,
@@ -11,21 +12,33 @@ import {
   SectionList,
 } from "react-native";
 import colors from "../config/colors";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const backgroundImage = "../assets/GrailBg.jpg";
 
 function UniqueHelmsScreen({navigation}) {
-  const userName = navigation.state.params;
+  const userName = navigation.getParam("Username");
 
-  const handleItemPress = async (item) => {
-    let newScore = 0;
-    const jsonValue = await AsyncStorage.getItem(userName)
-    const balle = JSON.parse(jsonValue);
-    balle.forEach(element => {
-      const jasonValue = JSON.stringify(element);
-      AsyncStorage.setItem(element.Username, jasonValue)
-    });
+  const getUser = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem(userName);
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (err) {
+      console.log("Error loading IN HOME SCREEN");
+    }
+  };
+
+  const handleItemPress = (item) => {
+    Promise.resolve(getUser()).then(function(theUser){theUser.forEach(element => {
+      element.Score += item.length;
+      const updatedUser = [{ Username: userName, Password: element.Password, Score: element.Score }];
+      try {
+        const jsonValue = JSON.stringify(updatedUser);
+        AsyncStorage.setItem(userName, jsonValue);
+        console.log(element);
+      }catch (err) {
+
+      }
+    })})
   }
 
 

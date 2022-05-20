@@ -18,7 +18,21 @@ const backgroundImage = "../assets/GrailBg.jpg";
 export default function HomeScreen({navigation}) {
     const userName = navigation.getParam("Username");
     const userScore = navigation.getParam("Score");
-    console.log(userName);
+    
+    const getUser = async () => {
+      try {
+        const jsonValue = await AsyncStorage.getItem(userName);
+        return jsonValue != null ? JSON.parse(jsonValue) : null;
+      } catch (err) {
+        console.log("Error loading IN HOME SCREEN");
+      }
+    };
+
+    const handleBtnClick = (page) => {
+      Promise.resolve(getUser()).then(function(theUser){theUser.forEach(element => {
+        navigation.navigate(page, element)
+      });})
+    }
 
   return (
     <ImageBackground
@@ -42,7 +56,7 @@ export default function HomeScreen({navigation}) {
             resizeMode="cover"
           >
             <Pressable
-              onPress={() => navigation.navigate("Uniques", userName)}
+              onPress={() => handleBtnClick("Uniques")}
               style={styles.mainButtons}
             >
               <Text style={[styles.buttonText, { color: colors.Uniques }]}>

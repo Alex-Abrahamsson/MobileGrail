@@ -19,6 +19,10 @@ function WelcomeScreen({ navigation}) {
   const [password, setPassword] = useState("");
 
 
+  const handleRegister = (userName, password) => {
+    registerUser(userName, password);
+  };
+
   const registerUser = async (userName, password) => {
     const theUser = [{Username: userName, Password: password, Score: 0}]
     try {
@@ -29,9 +33,6 @@ function WelcomeScreen({ navigation}) {
     }
   }
 
-  const handleRegister = (userName, password) => {
-    registerUser(userName, password);
-  }
 
   const getUser = async () => {
     try {
