@@ -19,17 +19,21 @@ function WelcomeScreen({ navigation}) {
   const [password, setPassword] = useState("");
 
 
-  const handleRegister = (userName, password) => {
-    registerUser(userName, password);
+  const handleRegister = () => {
+    registerUser();
   };
 
-  const registerUser = async (userName, password) => {
-    const theUser = [{Username: userName, Password: password, Score: 0}]
-    try {
-      const jsonValue = JSON.stringify(theUser);
-      await AsyncStorage.setItem(email, jsonValue);
-    }catch (err) {
-      console.log(err);
+  const registerUser = async () => {
+    if (await AsyncStorage.getItem(email) == null) {
+      const newUser = [{Username: email, Password: password, Score: 0}];
+      try {
+        const jsonValue = JSON.stringify(newUser);
+        AsyncStorage.setItem(email, jsonValue)
+      } catch (error) {
+        console.log("Register error", error);
+      }
+    }else{
+      alert("Username already taken");
     }
   }
 
@@ -39,7 +43,7 @@ function WelcomeScreen({ navigation}) {
       const jsonValue = await AsyncStorage.getItem(email)
       return jsonValue != null ? JSON.parse(jsonValue) : null;
     }catch (err){
-      console.log("Error loading");
+      return null;
     }
   }
 
@@ -91,7 +95,7 @@ function WelcomeScreen({ navigation}) {
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => handleRegister(email, password)} style={styles.loginBtn}>
+        <TouchableOpacity onPress={handleRegister} style={styles.loginBtn}>
           <Text style={styles.loginText}>Register</Text>
         </TouchableOpacity>
       </SafeAreaView>

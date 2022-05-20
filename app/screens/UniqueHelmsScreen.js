@@ -53,7 +53,7 @@ function UniqueHelmsScreen({navigation}) {
           sections={[
             { Title: "A", data: ["Andariel's Visage"] },
             { Title: "B", data: ["Biggin's Bonnet", "Blackhorn's Face"] },
-            { Title: "C", data: ["Coif of Glory", "Crown of Thieves", "Crown of Ages"],},
+            { Title: "C", data: ["Coif of Glory", "Crown of Thieves", "Crown of Ages"]},
             { Title: "D", data: ["Duskdeep", "Darksight Helm"] },
             { Title: "G", data: ["Giant Skull"] },
             { Title: "H", data: ["Howltusk", "Harlequin Crest"] },
@@ -62,9 +62,9 @@ function UniqueHelmsScreen({navigation}) {
             { Title: "R", data: ["Rockstopper"] },
             { Title: "S", data: ["Stealskull", "Steel Shade"] },
             { Title: "T", data: ["Tarnhelm", "The Face of Horror"] },
-            { Title: "U", data: ["Undead Crown", "The Face of Horror"] },
-            { Title: "V", data: ["Valkyrie Wing", "Vampire Gaze", "Veil of Steel"],},
-            { Title: "W", data: ["Wormskull", "The Face of Horror"] },
+            { Title: "U", data: ["Undead Crown"] },
+            { Title: "V", data: ["Valkyrie Wing", "Vampire Gaze", "Veil of Steel"]},
+            { Title: "W", data: ["Wormskull"] },
           ]}
           renderItem={({ item }) => (
             <Pressable onPress={() => handleItemPress(item)} style={styles.itemPressable}>

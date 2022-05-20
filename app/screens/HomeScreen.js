@@ -17,7 +17,7 @@ const backgroundImage = "../assets/GrailBg.jpg";
 
 export default function HomeScreen({navigation}) {
     const userName = navigation.getParam("Username");
-    const userScore = navigation.getParam("Score");
+    let userScore = navigation.getParam("Score");
     
     const getUser = async () => {
       try {
