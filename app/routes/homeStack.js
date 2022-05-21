@@ -6,6 +6,8 @@ import HomeScreen from "../screens/HomeScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import UniqueHelmsScreen from "../screens/UniqueHelmsScreen";
 import UniquesScreen from "../screens/UniquesScreen";
+import SetsScreen from "../screens/SetsScreen";
+import RunewordsScreen from "../screens/RunewordsScreen"
 
 const screens = {
   Welcome: {
@@ -24,6 +26,20 @@ const screens = {
   },
   Uniques: {
     screen: UniquesScreen,
+    headerMode: "none",
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Sets: {
+    screen: SetsScreen,
+    headerMode: "none",
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Runewords: {
+    screen: RunewordsScreen,
     headerMode: "none",
     navigationOptions: {
       headerShown: false,

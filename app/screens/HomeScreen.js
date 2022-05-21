@@ -71,11 +71,11 @@ export default function HomeScreen({navigation}) {
             resizeMode="cover"
           >
             <Pressable
-              onPress={() => alert("Set Items")}
+              onPress={() => handleBtnClick("Sets")}
               style={styles.mainButtons}
             >
               <Text style={[styles.buttonText, { color: colors.SetItems }]}>
-                Set Items
+                Sets
               </Text>
             </Pressable>
           </ImageBackground>
@@ -86,11 +86,11 @@ export default function HomeScreen({navigation}) {
             resizeMode="cover"
           >
             <Pressable
-              onPress={() => alert("Runes Words")}
+              onPress={() => handleBtnClick("Runewords")}
               style={styles.mainButtons}
             >
               <Text style={[styles.buttonText, { color: colors.RuneWords }]}>
-                Rune Words
+                Runewords
               </Text>
             </Pressable>
           </ImageBackground>
