@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import { StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
@@ -9,7 +10,9 @@ import {
   Pressable,
   ImageBackground,
   SectionList,
+  Modal
 } from "react-native";
+import { SetsModal } from '../modals/SetsModal';
 
 import colors from "../config/colors";
 
@@ -17,6 +20,18 @@ const backgroundImage = "../assets/GrailBg.jpg";
 
 function SetsScreen({ navigation }) {
   const userName = navigation.getParam("Username");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [chooseData, setChooseData] = useState();
+  const [itemClicked, setItemClicked] = useState();
+
+
+  const changeModalVisible = (bool) => {
+    setIsModalVisible(bool);
+  }
+
+  const setData = (data) => {
+    setChooseData(data);
+  }
 
   const getUser = async () => {
     try {
@@ -27,40 +42,93 @@ function SetsScreen({ navigation }) {
     }
   };
 
-  const handleItemClick = (item) => {
-    Promise.resolve(getUser()).then(function (theUser) {
-      theUser.forEach((element) => {
-        navigation.navigate("Set" + item, element);
-      });
-    });
-  };
-
   return (
     <ImageBackground
       source={require(backgroundImage)}
       style={styles.background}
     >
       <SafeAreaView style={styles.container}>
+        <Text style={{color:"white"}}>!{chooseData}!</Text>
+        <Modal
+          transparent={true}
+          animationType="fade"
+          visible={isModalVisible}
+          nRequestClose={() => changeModalVisible(false)}
+        >
+          <SetsModal changeModalVisible={changeModalVisible} setData={setData} itemClicked={itemClicked}/>
+        </Modal>
         <SectionList
           style={styles.sectionList}
           sections={[
-            { Title: "A", data: ["Angelic Raiment", "Arcanna's Tricks", "Arctic Gear", "Aldur's Watchtower "] },
-            { Title: "B", data: ["Berserker's Arsenal", "Bul-Kathos' Children"] },
-            { Title: "C", data: ["Cathan's Traps", "Civerb's Vestments", "Cleglaw's Brace", "Cow King's Leathers"] },
+            {
+              Title: "A",
+              data: [
+                "Angelic Raiment",
+                "Arcanna's Tricks",
+                "Arctic Gear",
+                "Aldur's Watchtower ",
+              ],
+            },
+            {
+              Title: "B",
+              data: ["Berserker's Arsenal", "Bul-Kathos' Children"],
+            },
+            {
+              Title: "C",
+              data: [
+                "Cathan's Traps",
+                "Civerb's Vestments",
+                "Cleglaw's Brace",
+                "Cow King's Leathers",
+              ],
+            },
             { Title: "D", data: ["Death's Disguise"] },
             { Title: "G", data: ["Griswold's Legacy "] },
-            { Title: "H", data: ["Hsarus' Defense", "Heaven's Brethren", "Hwanin's Majesty"] },
-            { Title: "I", data: ["Infernal Tools", "Iratha's Finery", "Isenhart's Armory", "Immortal King"] },
-            { Title: "M", data: ["Milabrega's Regalia", "M'avina's Battle Hymn"] },
+            {
+              Title: "H",
+              data: [
+                "Hsarus' Defense",
+                "Heaven's Brethren",
+                "Hwanin's Majesty",
+              ],
+            },
+            {
+              Title: "I",
+              data: [
+                "Infernal Tools",
+                "Iratha's Finery",
+                "Isenhart's Armory",
+                "Immortal King",
+              ],
+            },
+            {
+              Title: "M",
+              data: ["Milabrega's Regalia", "M'avina's Battle Hymn"],
+            },
             { Title: "N", data: ["Natalya's Odium", "Naj's Ancient Vestige"] },
             { Title: "O", data: ["Orphan's Call"] },
-            { Title: "S", data: ["Sigon's Complete Steel", "Sander's Folly", "Sazabi's Grand Tribute"] },
-            { Title: "T", data: ["Tancred's Battlegear", "The Disciple", "Tal Rasha's Wrappings", "Trang-Oul's Avatar"] },
+            {
+              Title: "S",
+              data: [
+                "Sigon's Complete Steel",
+                "Sander's Folly",
+                "Sazabi's Grand Tribute",
+              ],
+            },
+            {
+              Title: "T",
+              data: [
+                "Tancred's Battlegear",
+                "The Disciple",
+                "Tal Rasha's Wrappings",
+                "Trang-Oul's Avatar",
+              ],
+            },
             { Title: "V", data: ["Vidala's Rig "] },
           ]}
           renderItem={({ item }) => (
             <Pressable
-              onPress={() => handleItemClick(item)}
+              onPress={() => {changeModalVisible(true); setItemClicked(item)}}
               style={styles.itemPressable}
             >
               <Text style={styles.itemTxT}>{item}</Text>
@@ -72,6 +140,7 @@ function SetsScreen({ navigation }) {
             </View>
           )}
         />
+
         <StatusBar style="light" />
       </SafeAreaView>
     </ImageBackground>
