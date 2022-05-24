@@ -7,7 +7,8 @@ import WelcomeScreen from "../screens/WelcomeScreen";
 import UniqueHelmsScreen from "../screens/UniqueHelmsScreen";
 import UniquesScreen from "../screens/UniquesScreen";
 import SetsScreen from "../screens/SetsScreen";
-import RunewordsScreen from "../screens/RunewordsScreen"
+import RunewordsScreen from "../screens/RunewordsScreen";
+import BuildsScreen from "../screens/BuildsScreen";
 
 const screens = {
   Welcome: {
@@ -47,6 +48,13 @@ const screens = {
   },
   UniqueHelms: {
     screen: UniqueHelmsScreen,
+    headerMode: "none",
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Builds: {
+    screen: BuildsScreen,
     headerMode: "none",
     navigationOptions: {
       headerShown: false,

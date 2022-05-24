@@ -1,17 +1,34 @@
-import React from "react";
-import { StyleSheet, Text, View, Pressable, Dimensions } from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, Text, View, Pressable, Dimensions, FlatList } from "react-native";
+import SetPeices from "../config/SetPeices";
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT_MODAL = 600;
 
+
 const SetsModal = (props) => {
+    const [Items, setItems] = useState([
+      { Key: "Angelic Raiment", name: "Angelic Wing" },
+      { Key: "Aldur's Watchtower", name: "Aldur's Rhythm" },
+    ]);
+
+    const pureSetName = props.itemClicked;
 
     closeModal = (bool, data) => {
         props.changeModalVisible(bool);
         props.setData(data);
     }
-
-
+    const renderSet = () => {
+        return (
+            <FlatList
+            data={Items}
+            renderItem={({item}) => (
+                <View Key={item.Key}>
+                    <Text style={styles.text}>{item.Key}</Text>
+                </View>
+            )}/>
+        )
+    }
 
     return (
       <Pressable
@@ -23,16 +40,16 @@ const SetsModal = (props) => {
       >
         <View style={styles.modal}>
           <View style={styles.textView}>
-            <Text style={[styles.text, { fontSize: 22 }]}>
-              Modal Header -Here-
+            <Text style={[styles.text, { fontSize: 22, color: "#00C400"}]}>
+              {props.itemClicked}
             </Text>
-            <Text style={styles.text}>Description -Here-</Text>
+            {renderSet()}
           </View>
           <View style={styles.buttonsView}>
             <Pressable style={styles.modalBtns} onPress={() => closeModal(false, "Cancel")}>
               <Text style={styles.text}>Cancel</Text>
             </Pressable>
-            <Pressable style={styles.modalBtns} onPress={() => closeModal(false, props.itemClicked)}>
+            <Pressable style={styles.modalBtns} onPress={() => closeModal(false, pureSetName)}>
               <Text style={styles.text}>Ok</Text>
             </Pressable>
           </View>

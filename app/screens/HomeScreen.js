@@ -94,6 +94,22 @@ export default function HomeScreen({navigation}) {
               </Text>
             </Pressable>
           </ImageBackground>
+
+          <Text style={styles.headText}>Guides</Text>
+          <ImageBackground
+            source={require(btnBackground)}
+            style={styles.mainButtons}
+            resizeMode="cover"
+          >
+            <Pressable
+              onPress={() => handleBtnClick("Builds")}
+              style={styles.mainButtons}
+            >
+              <Text style={[styles.buttonText, { color: colors.GoldBorder }]}>
+                Builds
+              </Text>
+            </Pressable>
+          </ImageBackground>
         </View>
 
         <StatusBar style="light" />

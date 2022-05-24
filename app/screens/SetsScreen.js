@@ -48,7 +48,7 @@ function SetsScreen({ navigation }) {
       style={styles.background}
     >
       <SafeAreaView style={styles.container}>
-        <Text style={{color:"white"}}>!{chooseData}!</Text>
+        <Text style={{color:"white"}}>{chooseData}</Text>
         <Modal
           transparent={true}
           animationType="fade"
