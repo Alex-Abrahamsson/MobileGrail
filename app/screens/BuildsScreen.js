@@ -8,7 +8,8 @@ import {
   Pressable,
   ImageBackground,
   Dimensions,
-  Image
+  Image,
+  ScrollView
 } from "react-native";
 import {BuildBanner} from "../components/BuildBanner";
 
@@ -24,159 +25,318 @@ function BuildsScreen({ navigation }) {
         style={styles.background}
       >
         <SafeAreaView style={styles.container}>
-          <Text style={styles.headText}>Build screen</Text>
-          <View>
-            <Text style={styles.classText}>Sorceress</Text>
-            <BuildBanner tierLetter="A" build="Hydra Build" skillPix={["../assets/Blizzard.png","../assets/FrostNova.png","../assets/IceBlast.png","../assets/IceBolt.png","../assets/ColdMastery.png","../assets/Teleport.png","../assets/EnergyShield.png"]}/>
+          <ScrollView>
+            <View>
+              <Text style={styles.classText}>Sorceress</Text>
+              <BuildBanner
+                tierLetter="S"
+                build="Frozen Orb"
+                skillPix={[
+                  { src: require(`../assets/FrozenOrb.png`) },
+                  { src: require(`../assets/IceBlast.png`) },
+                  { src: require(`../assets/IceBolt.png`) },
+                  { src: require(`../assets/ColdMastery.png`) },
+                  { src: require(`../assets/Warmth.png`) },
+                  { src: require(`../assets/Teleport.png`) },
+                  { src: require(`../assets/EnergyShield.png`) },
+                ]}
+              />
 
-            <Pressable style={[styles.buildBtns, {borderColor:"orange"}]}>
-              <View style={styles.bannerView}>
-                <View style={styles.tierView}>
-                  <Text style={styles.tierLetter}>A</Text>
-                  <Text style={styles.tierText}>Tier</Text>
-                </View>
-                <View style={styles.spellView}>
-                  <Image style={styles.spellImage} source={require("../assets/Blizzard.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FrostNova.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBlast.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBolt.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/ColdMastery.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/Teleport.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/EnergyShield.png")}/>
-                </View>
-                <View style={{ alignItems: "center", flexDirection:"row",marginHorizontal:5}}>
-                  <Text style={{color:"white"}}>Blizzard Build</Text>
-                </View>
-              </View>
-            </Pressable>
+              <BuildBanner
+                tierLetter="A"
+                build="Blizzard Build"
+                skillPix={[
+                  { src: require(`../assets/Blizzard.png`) },
+                  { src: require(`../assets/FrostNova.png`) },
+                  { src: require(`../assets/IceBlast.png`) },
+                  { src: require(`../assets/IceBolt.png`) },
+                  { src: require(`../assets/ColdMastery.png`) },
+                  { src: require(`../assets/Teleport.png`) },
+                  { src: require(`../assets/EnergyShield.png`) },
+                ]}
+              />
 
-            <Pressable style={[styles.buildBtns, {borderColor:"orange"}]}>
-              <View style={styles.bannerView}>
-                <View style={styles.tierView}>
-                  <Text style={styles.tierLetter}>A</Text>
-                  <Text style={styles.tierText}>Tier</Text>
-                </View>
-                <View style={styles.spellView}>
-                  <Image style={styles.spellImage} source={require("../assets/FireBolt.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FireBall.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/Meteor.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FireMastery.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FrozenArmor.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FrozenOrb.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/ColdMastery.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/Teleport.png")}/>
-                </View>
-                <View style={{ alignItems: "center", flexDirection:"row",marginHorizontal:5}}>
-                  <Text style={{color:"white"}}>Fire Meteor</Text>
-                </View>
-              </View>
-            </Pressable>
+              <BuildBanner
+                tierLetter="A"
+                build="Fire MeteOrb"
+                skillPix={[
+                  { src: require(`../assets/FireBolt.png`) },
+                  { src: require(`../assets/FireBall.png`) },
+                  { src: require(`../assets/Meteor.png`) },
+                  { src: require(`../assets/FireMastery.png`) },
+                  { src: require(`../assets/FrozenArmor.png`) },
+                  { src: require(`../assets/FrozenOrb.png`) },
+                  { src: require(`../assets/ColdMastery.png`) },
+                  { src: require(`../assets/Teleport.png`) },
+                ]}
+              />
 
-            <Pressable style={[styles.buildBtns, {borderColor:"orange"}]}>
-              <View style={styles.bannerView}>
-                <View style={styles.tierView}>
-                  <Text style={styles.tierLetter}>A</Text>
-                  <Text style={styles.tierText}>Tier</Text>
-                </View>
-                <View style={styles.spellView}>
-                  <Image style={styles.spellImage} source={require("../assets/Blizzard.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FrostNova.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBlast.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBolt.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/ColdMastery.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/Teleport.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/EnergyShield.png")}/>
-                </View>
-                <View style={{ alignItems: "center", flexDirection:"row",marginHorizontal:5}}>
-                  <Text style={{color:"white"}}>Chain Lightning</Text>
-                </View>
-              </View>
-            </Pressable>
+              <BuildBanner
+                tierLetter="A"
+                build="Chain Lightning"
+                skillPix={[
+                  { src: require(`../assets/ChargedBolt.png`) },
+                  { src: require(`../assets/Lightning.png`) },
+                  { src: require(`../assets/ChainLightning.png`) },
+                  { src: require(`../assets/Nova.png`) },
+                  { src: require(`../assets/LightningMastery.png`) },
+                  { src: require(`../assets/Teleport.png`) },
+                  { src: require(`../assets/EnergyShield.png`) },
+                ]}
+              />
 
-            <Pressable style={[styles.buildBtns, {borderColor:"yellow"}]}>
-              <View style={styles.bannerView}>
-                <View style={styles.tierView}>
-                  <Text style={styles.tierLetter}>B</Text>
-                  <Text style={styles.tierText}>Tier</Text>
-                </View>
-                <View style={styles.spellView}>
-                  <Image style={styles.spellImage} source={require("../assets/Blizzard.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FrostNova.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBlast.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBolt.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/ColdMastery.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/Teleport.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/EnergyShield.png")}/>
-                </View>
-                <View style={{ alignItems: "center", flexDirection:"row",marginHorizontal:5}}>
-                  <Text style={{color:"white"}}>Firewall Build</Text>
-                </View>
-              </View>
-            </Pressable>
+              <BuildBanner
+                tierLetter="A"
+                build="Blizzard MF%"
+                skillPix={[
+                  { src: require(`../assets/Blizzard.png`) },
+                  { src: require(`../assets/FrostNova.png`) },
+                  { src: require(`../assets/GlacialSpike.png`) },
+                  { src: require(`../assets/IceBlast.png`) },
+                  { src: require(`../assets/IceBolt.png`) },
+                  { src: require(`../assets/ColdMastery.png`) },
+                  { src: require(`../assets/Teleport.png`) },
+                  { src: require(`../assets/EnergyShield.png`) },
+                ]}
+              />
 
-            <Pressable style={[styles.buildBtns, {borderColor:"orange"}]}>
-              <View style={styles.bannerView}>
-                <View style={styles.tierView}>
-                  <Text style={styles.tierLetter}>A</Text>
-                  <Text style={styles.tierText}>Tier</Text>
-                </View>
-                <View style={styles.spellView}>
-                  <Image style={styles.spellImage} source={require("../assets/Blizzard.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FrostNova.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBlast.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBolt.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/ColdMastery.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/Teleport.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/EnergyShield.png")}/>
-                </View>
-                <View style={{ alignItems: "center", flexDirection:"row",marginHorizontal:5}}>
-                  <Text style={{color:"white"}}>Blizzard MF%</Text>
-                </View>
-              </View>
-            </Pressable>
+              <BuildBanner
+                tierLetter="B"
+                build="Firewall"
+                skillPix={[
+                  { src: require(`../assets/Inferno.png`) },
+                  { src: require(`../assets/Blaze.png`) },
+                  { src: require(`../assets/FireWall.png`) },
+                  { src: require(`../assets/FireMastery.png`) },
+                  { src: require(`../assets/FrozenOrb.png`) },
+                  { src: require(`../assets/Teleport.png`) },
+                  { src: require(`../assets/EnergyShield.png`) },
+                ]}
+              />
 
-            <Pressable style={[styles.buildBtns, {borderColor:"red"}]}>
-              <View style={styles.bannerView}>
-                <View style={styles.tierView}>
-                  <Text style={styles.tierLetter}>S</Text>
-                  <Text style={styles.tierText}>Tier</Text>
-                </View>
-                <View style={styles.spellView}>
-                  <Image style={styles.spellImage} source={require("../assets/Blizzard.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FrostNova.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBlast.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBolt.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/ColdMastery.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/Teleport.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/EnergyShield.png")}/>
-                </View>
-                <View style={{ alignItems: "center", flexDirection:"row",marginHorizontal:5}}>
-                  <Text style={{color:"white"}}>Frozen Orb</Text>
-                </View>
-              </View>
-            </Pressable>
+              <BuildBanner
+                tierLetter="C"
+                build="Melee Enchantress"
+                skillPix={[
+                  { src: require(`../assets/Telekinesis.png`) },
+                  { src: require(`../assets/EnergyShield.png`) },
+                  { src: require(`../assets/Warmth.png`) },
+                  { src: require(`../assets/Enchant.png`) },
+                  { src: require(`../assets/Teleport.png`) },
+                  { src: require(`../assets/FrozenArmor.png`) },
+                ]}
+              />
 
-            <Pressable style={[styles.buildBtns, {borderColor:"green"}]}>
-              <View style={styles.bannerView}>
-                <View style={styles.tierView}>
-                  <Text style={styles.tierLetter}>C</Text>
-                  <Text style={styles.tierText}>Tier</Text>
-                </View>
-                <View style={styles.spellView}>
-                  <Image style={styles.spellImage} source={require("../assets/Blizzard.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/FrostNova.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBlast.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/IceBolt.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/ColdMastery.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/Teleport.png")}/>
-                  <Image style={styles.spellImage} source={require("../assets/EnergyShield.png")}/>
-                </View>
-                <View style={{ alignItems: "center", flexDirection:"row",marginHorizontal:5}}>
-                  <Text style={{color:"white"}}>Melee Enchantress</Text>
-                </View>
-              </View>
-            </Pressable>
-          </View>
+              <Text style={styles.classText}>Barbarian</Text>
+              <BuildBanner
+                tierLetter="A"
+                build="Whirlwind"
+                skillPix={[
+                  { src: require(`../assets/Barb/Whirlwind.png`) },
+                  { src: require(`../assets/Barb/SwordMastery.png`) },
+                  { src: require(`../assets/Barb/BattleOrders.png`) },
+                  { src: require(`../assets/Barb/Shout.png`) },
+                  { src: require(`../assets/Barb/NaturalResistance.png`) },
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
+                  { src: require(`../assets/Barb/IronSkin.png`) },
+                  { src: require(`../assets/Barb/Berserk.png`) },
+                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                ]}
+              />
+
+              <BuildBanner
+                tierLetter="A"
+                build="Frenzy"
+                skillPix={[
+                  { src: require(`../assets/Barb/Frenzy.png`) },
+                  { src: require(`../assets/Barb/SwordMastery.png`) },
+                  { src: require(`../assets/Barb/BattleOrders.png`) },
+                  { src: require(`../assets/Barb/DoubleSwing.png`) },
+                  { src: require(`../assets/Barb/Taunt.png`) },
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
+                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                ]}
+              />
+
+              <BuildBanner
+                tierLetter="A"
+                build="Whirlwind MF%"
+                skillPix={[
+                  { src: require(`../assets/Barb/Whirlwind.png`) },
+                  { src: require(`../assets/Barb/SwordMastery.png`) },
+                  { src: require(`../assets/Barb/BattleOrders.png`) },
+                  { src: require(`../assets/Barb/Shout.png`) },
+                  { src: require(`../assets/Barb/NaturalResistance.png`) },
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
+                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Berserker"
+                skillPix={[
+                  { src: require(`../assets/Barb/Berserk.png`) },
+                  { src: require(`../assets/Barb/SwordMastery.png`) },
+                  { src: require(`../assets/Barb/BattleOrders.png`) },
+                  { src: require(`../assets/Barb/Shout.png`) },
+                  { src: require(`../assets/Barb/Howl.png`) },
+                  { src: require(`../assets/Barb/Whirlwind.png`) },
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
+                  { src: require(`../assets/Barb/NaturalResistance.png`) },
+                  { src: require(`../assets/Barb/IronSkin.png`) },
+                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Thrower"
+                skillPix={[
+                  { src: require(`../assets/Barb/DoubleThrow.png`) },
+                  { src: require(`../assets/Barb/DoubleSwing.png`) },
+                  { src: require(`../assets/Barb/ThrowingMastery.png`) },
+                  { src: require(`../assets/Barb/BattleOrders.png`) },
+                  { src: require(`../assets/Barb/Shout.png`) },
+                  { src: require(`../assets/Barb/NaturalResistance.png`) },
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
+                  { src: require(`../assets/Barb/IronSkin.png`) },
+                  { src: require(`../assets/Barb/Berserk.png`) },
+                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                ]}
+              />
+
+              <Text style={styles.classText}>Necromancer</Text>
+              <BuildBanner
+                tierLetter="S"
+                build="Summoner"
+                skillPix={[
+                  { src: require(`../assets/Necro/RaiseSkeleton.png`) },
+                  { src: require(`../assets/Necro/SkeletonMastery.png`) },
+                  { src: require(`../assets/Necro/CorpseExplosion.png`) },
+                  { src: require(`../assets/Necro/RaiseSkeletalMage.png`) },
+                  { src: require(`../assets/Necro/GolemMastery.png`) },
+                  { src: require(`../assets/Necro/FireGolem.png`) },
+                  { src: require(`../assets/Necro/LowerResist.png`) },
+                  { src: require(`../assets/Necro/AmplifyDamage.png`) },
+                  { src: require(`../assets/Necro/DimVision.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="S"
+                build="Summoner MF%"
+                skillPix={[
+                  { src: require(`../assets/Necro/RaiseSkeleton.png`) },
+                  { src: require(`../assets/Necro/SkeletonMastery.png`) },
+                  { src: require(`../assets/Necro/CorpseExplosion.png`) },
+                  { src: require(`../assets/Necro/RaiseSkeletalMage.png`) },
+                  { src: require(`../assets/Necro/IronGolem.png`) },
+                  { src: require(`../assets/Necro/LowerResist.png`) },
+                  { src: require(`../assets/Necro/AmplifyDamage.png`) },
+                  { src: require(`../assets/Necro/DimVision.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Bones"
+                skillPix={[
+                  { src: require(`../assets/Necro/Teeth.png`) },
+                  { src: require(`../assets/Necro/BoneSpear.png`) },
+                  { src: require(`../assets/Necro/BoneSpirit.png`) },
+                  { src: require(`../assets/Necro/BoneWall.png`) },
+                  { src: require(`../assets/Necro/BonePrison.png`) },
+                  { src: require(`../assets/Necro/AmplifyDamage.png`) },
+                  { src: require(`../assets/Necro/BoneArmor.png`) },
+                  { src: require(`../assets/Necro/Revive.png`) },
+                  { src: require(`../assets/Necro/ClayGolem.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Poison Nova"
+                skillPix={[
+                  { src: require(`../assets/Necro/PoisonDagger.png`) },
+                  { src: require(`../assets/Necro/PoisonExplosion.png`) },
+                  { src: require(`../assets/Necro/PoisonNova.png`) },
+                  { src: require(`../assets/Necro/CorpseExplosion.png`) },
+                  { src: require(`../assets/Necro/BoneArmor.png`) },
+                  { src: require(`../assets/Necro/LowerResist.png`) },
+                  { src: require(`../assets/Necro/ClayGolem.png`) },
+                  { src: require(`../assets/Necro/Revive.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="Exploder"
+                skillPix={[
+                  { src: require(`../assets/Necro/CorpseExplosion.png`) },
+                  { src: require(`../assets/Necro/AmplifyDamage.png`) },
+                  { src: require(`../assets/Necro/BoneWall.png`) },
+                  { src: require(`../assets/Necro/BonePrison.png`) },
+                  { src: require(`../assets/Necro/BoneArmor.png`) },
+                  { src: require(`../assets/Necro/GolemMastery.png`) },
+                  { src: require(`../assets/Necro/FireGolem.png`) },
+                  { src: require(`../assets/Necro/SummonResist.png`) },
+                ]}
+              />
+
+              <Text style={styles.classText}>Paladin</Text>
+              <BuildBanner
+                tierLetter="S"
+                build="Hammerdin"
+                skillPix={[
+                  { src: require(`../assets/Pala/BlessedHammer.png`) },
+                  { src: require(`../assets/Pala/Vigor.png`) },
+                  { src: require(`../assets/Pala/BlessedAim.png`) },
+                  { src: require(`../assets/Pala/Concentration.png`) },
+                  { src: require(`../assets/Pala/HolyShield.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="S"
+                build="Hammerdin MF%"
+                skillPix={[
+                  { src: require(`../assets/Pala/BlessedHammer.png`) },
+                  { src: require(`../assets/Pala/Vigor.png`) },
+                  { src: require(`../assets/Pala/BlessedAim.png`) },
+                  { src: require(`../assets/Pala/Concentration.png`) },
+                  { src: require(`../assets/Pala/HolyShield.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Fist Of Heaven"
+                skillPix={[
+                  { src: require(`../assets/Pala/FistOfHeavens.png`) },
+                  { src: require(`../assets/Pala/HolyShock.png`) },
+                  { src: require(`../assets/Pala/HolyBolt.png`) },
+                  { src: require(`../assets/Pala/HolyShield.png`) },
+                  { src: require(`../assets/Pala/Conviction.png`) },
+                  { src: require(`../assets/Pala/Smite.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Smiter"
+                skillPix={[
+                  { src: require(`../assets/Pala/Smite.png`) },
+                  { src: require(`../assets/Pala/HolyShield.png`) },
+                  { src: require(`../assets/Pala/Fanaticism.png`) },
+                  { src: require(`../assets/Pala/Vengeance.png`) },
+                  { src: require(`../assets/Pala/ResistFire.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Zealer"
+                skillPix={[
+                  { src: require(`../assets/Pala/Sacrifice.png`) },
+                  { src: require(`../assets/Pala/Defiance.png`) },
+                  { src: require(`../assets/Pala/Zeal.png`) },
+                  { src: require(`../assets/Pala/HolyShield.png`) },
+                  { src: require(`../assets/Pala/Fanaticism.png`) },
+                ]}
+              />
+            </View>
+          </ScrollView>
         </SafeAreaView>
       </ImageBackground>
     );
@@ -200,6 +360,7 @@ const styles = StyleSheet.create({
   },
   classText: {
     color: "white",
+    paddingTop:20
   },
   buildBtns: {
     borderWidth: 1.5,
@@ -213,15 +374,6 @@ const styles = StyleSheet.create({
   bannerView: {
     flexDirection: "row",
     flex: 1,
-  },
-  tierText: {
-    color: "white",
-    fontSize: 16,
-  },
-  tierLetter: {
-    color: "white",
-    fontSize: 18,
-    textAlign: "center",
   },
   tierView: {
     marginLeft: 5,

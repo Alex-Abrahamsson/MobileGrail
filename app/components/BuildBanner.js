@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,21 +8,47 @@ import {
   ImageBackground,
   Dimensions,
   Image,
+  FlatList
 } from "react-native";
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = 100;
 
 const BuildBanner = (props) => {
+
+  const getBorderColor = (letter) => {
+    switch (letter) {
+      case "S":
+        return { borderColor: "#C80A16" };
+      case "A":
+        return { borderColor: "#E94111" };
+      case "B":
+        return {borderColor: "yellow"};
+      case "C":
+        return {borderColor: "green"};
+      default:
+        return {borderColor: "black"};
+    }
+  }
+
     return (
-      <Pressable style={[styles.buildBtns, {borderColor:"orange"}]}>
+      <Pressable style={[styles.A, getBorderColor(props.tierLetter)]}>
         <View style={styles.bannerView}>
           <View style={styles.tierView}>
             <Text style={styles.tierLetter}>{props.tierLetter}</Text>
             <Text style={styles.tierText}>Tier</Text>
           </View>
           <View style={styles.spellView}>
-            {props.skillPix.map((itemz) => {<Image style={styles.spellImage} source={require({itemz})}/>})}
+            <FlatList 
+              data={props.skillPix}
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              renderItem={({item}) => (
+                <Image 
+                  source={item.src} 
+                  style={styles.spellImage}/>
+                  )}
+                  keyExtractor={item => item.src.toString()}/>
           </View>
           <View style={{ alignItems: "center", flexDirection:"row",marginHorizontal:5}}>
               <Text style={{color: 'white'}}>{props.build}</Text>
@@ -37,12 +63,12 @@ export {BuildBanner};
 
 
 const styles = StyleSheet.create({
-  buildBtns: {
+  A: {
     borderWidth: 1.5,
     borderColor: "white",
     backgroundColor: "#0007",
-    width: WIDTH - 50,
-    marginTop: 10,
+    width: WIDTH - 30,
+    marginTop: 5,
     marginBottom: 10,
     flexDirection: "row",
   },
@@ -52,11 +78,11 @@ const styles = StyleSheet.create({
   },
   tierText: {
     color: "white",
-    fontSize: 16,
+    fontSize: 12,
   },
   tierLetter: {
     color: "white",
-    fontSize: 18,
+    fontSize: 14,
     textAlign: "center",
   },
   tierView: {
@@ -71,7 +97,9 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   spellImage: {
-    height: 20,
-    width: 20,
+    height: 22,
+    width: 22,
+    marginHorizontal:2,
+    borderRadius:4
   },
 });
