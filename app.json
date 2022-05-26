@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MobileGrail",
-    "slug": "MobileGrail",
+    "name": "Dijablo Grail",
+    "slug": "dijablo-grail",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -28,6 +28,7 @@
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    }
+    },
+    "description": "The Meca for Diablo 2 knowledge!"
   }
 }
