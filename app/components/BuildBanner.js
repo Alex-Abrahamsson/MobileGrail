@@ -8,13 +8,22 @@ import {
   ImageBackground,
   Dimensions,
   Image,
-  FlatList
+  FlatList,
+  Modal
 } from "react-native";
+import { BuildModal } from "../modals/BuildModal";
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = 100;
 
+
+
 const BuildBanner = (props) => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const changeModalVisible = (bool) => {
+    setIsModalVisible(bool);
+  };
 
   const getBorderColor = (letter) => {
     switch (letter) {
@@ -32,7 +41,14 @@ const BuildBanner = (props) => {
   }
 
     return (
-      <Pressable style={[styles.A, getBorderColor(props.tierLetter)]}>
+      <Pressable onPress={() => {changeModalVisible(true)}} style={[styles.A, getBorderColor(props.tierLetter)]}>
+        <Modal 
+          transparent={true} 
+          animationType="fade" 
+          visible={isModalVisible} 
+          nRequestClose={() => changeModalVisible(false)}>
+          <BuildModal changeModalVisible={changeModalVisible} borderColor={props.tierLetter} buildName={props.build}/>
+        </Modal>
         <View style={styles.bannerView}>
           <View style={styles.tierView}>
             <Text style={styles.tierLetter}>{props.tierLetter}</Text>
@@ -44,9 +60,9 @@ const BuildBanner = (props) => {
               showsHorizontalScrollIndicator={false}
               horizontal={true}
               renderItem={({item}) => (
-                <Image 
+                <View><Text style={styles.smallNr}>{item.points}</Text><Image 
                   source={item.src} 
-                  style={styles.spellImage}/>
+                  style={styles.spellImage}/></View>
                   )}
                   keyExtractor={item => item.src.toString()}/>
           </View>
@@ -66,6 +82,7 @@ const styles = StyleSheet.create({
   A: {
     borderWidth: 1.5,
     borderColor: "white",
+    borderRadius: 10,
     backgroundColor: "#0007",
     width: WIDTH - 30,
     marginTop: 5,
@@ -99,7 +116,19 @@ const styles = StyleSheet.create({
   spellImage: {
     height: 22,
     width: 22,
-    marginHorizontal:2,
-    borderRadius:4
+    marginHorizontal: 2,
+    borderRadius: 4,
   },
+  smallNr: {
+    color:"white",
+    fontSize:8,
+    fontWeight: "bold",
+    position:"absolute",
+    left: -1,
+    top:-3,
+    zIndex:1000,
+    backgroundColor:"#000",
+    borderRadius:3,
+    paddingHorizontal:2
+  }
 });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,17 +8,18 @@ import {
   Pressable,
   ImageBackground,
   Dimensions,
-  Image,
-  ScrollView
+  ScrollView,
+  Modal
 } from "react-native";
 import {BuildBanner} from "../components/BuildBanner";
 
 
 const backgroundImage = "../assets/GrailBg.jpg";
 const WIDTH = Dimensions.get("window").width;
-const HEIGHT = 100;
 
 function BuildsScreen({ navigation }) {
+
+
     return (
       <ImageBackground
         source={require(backgroundImage)}
@@ -29,500 +30,536 @@ function BuildsScreen({ navigation }) {
             <View>
               <Text style={styles.classText}>Sorceress</Text>
               <BuildBanner
+                class="Sorceress"
                 tierLetter="S"
                 build="Frozen Orb"
                 skillPix={[
-                  { src: require(`../assets/Sorc/FrozenOrb.png`) },
-                  { src: require(`../assets/Sorc/IceBlast.png`) },
-                  { src: require(`../assets/Sorc/IceBolt.png`) },
-                  { src: require(`../assets/Sorc/ColdMastery.png`) },
-                  { src: require(`../assets/Sorc/Warmth.png`) },
-                  { src: require(`../assets/Sorc/Teleport.png`) },
-                  { src: require(`../assets/Sorc/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/FrozenOrb.png`),points: "20",},
+                  { src: require(`../assets/Sorc/IceBlast.png`), points: "20" },
+                  { src: require(`../assets/Sorc/IceBolt.png`), points: "20" },
+                  { src: require(`../assets/Sorc/ColdMastery.png`), points: "20",},
+                  { src: require(`../assets/Sorc/Warmth.png`), points: "20" },
+                  { src: require(`../assets/Sorc/Teleport.png`), points: "1" },
+                  { src: require(`../assets/Sorc/EnergyShield.png`),points: "1",},
                 ]}
               />
 
               <BuildBanner
+                class="Sorceress"
                 tierLetter="A"
                 build="Blizzard Build"
                 skillPix={[
-                  { src: require(`../assets/Sorc/Blizzard.png`) },
-                  { src: require(`../assets/Sorc/FrostNova.png`) },
-                  { src: require(`../assets/Sorc/IceBlast.png`) },
-                  { src: require(`../assets/Sorc/IceBolt.png`) },
-                  { src: require(`../assets/Sorc/ColdMastery.png`) },
-                  { src: require(`../assets/Sorc/Teleport.png`) },
-                  { src: require(`../assets/Sorc/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/Blizzard.png`), points: "20"},
+                  { src: require(`../assets/Sorc/FrostNova.png`), points: "20"},
+                  { src: require(`../assets/Sorc/IceBlast.png`), points: "20"},
+                  { src: require(`../assets/Sorc/IceBolt.png`), points: "20"},
+                  { src: require(`../assets/Sorc/ColdMastery.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Teleport.png`), points: "1"},
+                  { src: require(`../assets/Sorc/EnergyShield.png`), points: "1"},
                 ]}
               />
 
               <BuildBanner
+                class="Sorceress"
                 tierLetter="A"
                 build="Fire MeteOrb"
                 skillPix={[
-                  { src: require(`../assets/Sorc/FireBolt.png`) },
-                  { src: require(`../assets/Sorc/FireBall.png`) },
-                  { src: require(`../assets/Sorc/Meteor.png`) },
-                  { src: require(`../assets/Sorc/FireMastery.png`) },
-                  { src: require(`../assets/Sorc/FrozenArmor.png`) },
-                  { src: require(`../assets/Sorc/FrozenOrb.png`) },
-                  { src: require(`../assets/Sorc/ColdMastery.png`) },
-                  { src: require(`../assets/Sorc/Teleport.png`) },
+                  { src: require(`../assets/Sorc/FireBolt.png`), points: "1"},
+                  { src: require(`../assets/Sorc/FireBall.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Meteor.png`), points: "20"},
+                  { src: require(`../assets/Sorc/FireMastery.png`), points: "20"},
+                  { src: require(`../assets/Sorc/FrozenArmor.png`), points: "1"},
+                  { src: require(`../assets/Sorc/FrozenOrb.png`), points: "20"},
+                  { src: require(`../assets/Sorc/ColdMastery.png`), points: "5"},
+                  { src: require(`../assets/Sorc/Teleport.png`), points: "1"},
                 ]}
               />
 
               <BuildBanner
+                class="Sorceress"
                 tierLetter="A"
                 build="Chain Lightning"
                 skillPix={[
-                  { src: require(`../assets/Sorc/ChargedBolt.png`) },
-                  { src: require(`../assets/Sorc/Lightning.png`) },
-                  { src: require(`../assets/Sorc/ChainLightning.png`) },
-                  { src: require(`../assets/Sorc/Nova.png`) },
-                  { src: require(`../assets/Sorc/LightningMastery.png`) },
-                  { src: require(`../assets/Sorc/Teleport.png`) },
-                  { src: require(`../assets/Sorc/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/ChargedBolt.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Lightning.png`), points: "20"},
+                  { src: require(`../assets/Sorc/ChainLightning.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Nova.png`), points: "20"},
+                  { src: require(`../assets/Sorc/LightningMastery.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Teleport.png`), points: "1"},
+                  { src: require(`../assets/Sorc/EnergyShield.png`), points: "1"},
                 ]}
               />
 
               <BuildBanner
+                class="Sorceress"
                 tierLetter="A"
                 build="Blizzard MF%"
                 skillPix={[
-                  { src: require(`../assets/Sorc/Blizzard.png`) },
-                  { src: require(`../assets/Sorc/FrostNova.png`) },
-                  { src: require(`../assets/Sorc/GlacialSpike.png`) },
-                  { src: require(`../assets/Sorc/IceBlast.png`) },
-                  { src: require(`../assets/Sorc/IceBolt.png`) },
-                  { src: require(`../assets/Sorc/ColdMastery.png`) },
-                  { src: require(`../assets/Sorc/Teleport.png`) },
-                  { src: require(`../assets/Sorc/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/Blizzard.png`), points: "20"},
+                  { src: require(`../assets/Sorc/FrostNova.png`), points: "20"},
+                  { src: require(`../assets/Sorc/GlacialSpike.png`), points: "20"},
+                  { src: require(`../assets/Sorc/IceBlast.png`), points: "20"},
+                  { src: require(`../assets/Sorc/IceBolt.png`), points: "20"},
+                  { src: require(`../assets/Sorc/ColdMastery.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Teleport.png`), points: "1"},
+                  { src: require(`../assets/Sorc/EnergyShield.png`), points: "1"},
                 ]}
               />
 
               <BuildBanner
+                class="Sorceress"
                 tierLetter="B"
                 build="Firewall"
                 skillPix={[
-                  { src: require(`../assets/Sorc/Inferno.png`) },
-                  { src: require(`../assets/Sorc/Blaze.png`) },
-                  { src: require(`../assets/Sorc/FireWall.png`) },
-                  { src: require(`../assets/Sorc/FireMastery.png`) },
-                  { src: require(`../assets/Sorc/FrozenOrb.png`) },
-                  { src: require(`../assets/Sorc/Teleport.png`) },
-                  { src: require(`../assets/Sorc/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/Inferno.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Blaze.png`), points: "20"},
+                  { src: require(`../assets/Sorc/FireWall.png`), points: "20"},
+                  { src: require(`../assets/Sorc/FireMastery.png`), points: "20"},
+                  { src: require(`../assets/Sorc/FrozenOrb.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Teleport.png`), points: "1"},
+                  { src: require(`../assets/Sorc/EnergyShield.png`), points: "1"},
                 ]}
               />
 
               <BuildBanner
+                class="Sorceress"
                 tierLetter="C"
                 build="Melee Enchantress"
                 skillPix={[
-                  { src: require(`../assets/Sorc/Telekinesis.png`) },
-                  { src: require(`../assets/Sorc/EnergyShield.png`) },
-                  { src: require(`../assets/Sorc/Warmth.png`) },
-                  { src: require(`../assets/Sorc/Enchant.png`) },
-                  { src: require(`../assets/Sorc/Teleport.png`) },
-                  { src: require(`../assets/Sorc/FrozenArmor.png`) },
+                  { src: require(`../assets/Sorc/Telekinesis.png`), points: "20"},
+                  { src: require(`../assets/Sorc/EnergyShield.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Warmth.png`), points: "20"},
+                  { src: require(`../assets/Sorc/Enchant.png`), points: "10"},
+                  { src: require(`../assets/Sorc/Teleport.png`), points: "1"},
+                  { src: require(`../assets/Sorc/FrozenArmor.png`), points: "10"},
                 ]}
               />
 
               <Text style={styles.classText}>Barbarian</Text>
               <BuildBanner
+                class="Barbarian"
                 tierLetter="A"
                 build="Whirlwind"
                 skillPix={[
-                  { src: require(`../assets/Barb/Whirlwind.png`) },
-                  { src: require(`../assets/Barb/SwordMastery.png`) },
-                  { src: require(`../assets/Barb/BattleOrders.png`) },
-                  { src: require(`../assets/Barb/Shout.png`) },
-                  { src: require(`../assets/Barb/NaturalResistance.png`) },
-                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
-                  { src: require(`../assets/Barb/IronSkin.png`) },
-                  { src: require(`../assets/Barb/Berserk.png`) },
-                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                  { src: require(`../assets/Barb/Whirlwind.png`), points: "20"},
+                  { src: require(`../assets/Barb/SwordMastery.png`), points: "20"},
+                  { src: require(`../assets/Barb/BattleOrders.png`), points: "20"},
+                  { src: require(`../assets/Barb/Shout.png`), points: "20"},
+                  { src: require(`../assets/Barb/NaturalResistance.png`), points: "5"},
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`), points: "5"},
+                  { src: require(`../assets/Barb/IronSkin.png`), points: "5"},
+                  { src: require(`../assets/Barb/Berserk.png`), points: "1"},
+                  { src: require(`../assets/Barb/BattleCommand.png`), points: "1"},
                 ]}
               />
 
               <BuildBanner
+                class="Barbarian"
                 tierLetter="A"
                 build="Frenzy"
                 skillPix={[
-                  { src: require(`../assets/Barb/Frenzy.png`) },
-                  { src: require(`../assets/Barb/SwordMastery.png`) },
-                  { src: require(`../assets/Barb/BattleOrders.png`) },
-                  { src: require(`../assets/Barb/DoubleSwing.png`) },
-                  { src: require(`../assets/Barb/Taunt.png`) },
-                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
-                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                  { src: require(`../assets/Barb/Frenzy.png`), points: "20"},
+                  { src: require(`../assets/Barb/SwordMastery.png`), points: "20"},
+                  { src: require(`../assets/Barb/BattleOrders.png`), points: "20"},
+                  { src: require(`../assets/Barb/DoubleSwing.png`), points: "20"},
+                  { src: require(`../assets/Barb/Taunt.png`), points: "20"},
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`), points: "1"},
+                  { src: require(`../assets/Barb/BattleCommand.png`), points: "1"},
                 ]}
               />
 
               <BuildBanner
+                class="Barbarian"
                 tierLetter="A"
                 build="Whirlwind MF%"
                 skillPix={[
-                  { src: require(`../assets/Barb/Whirlwind.png`) },
-                  { src: require(`../assets/Barb/SwordMastery.png`) },
-                  { src: require(`../assets/Barb/BattleOrders.png`) },
-                  { src: require(`../assets/Barb/Shout.png`) },
-                  { src: require(`../assets/Barb/NaturalResistance.png`) },
-                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
-                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                  { src: require(`../assets/Barb/Whirlwind.png`), points: "20"},
+                  { src: require(`../assets/Barb/SwordMastery.png`), points: "20"},
+                  { src: require(`../assets/Barb/BattleOrders.png`), points: "20"},
+                  { src: require(`../assets/Barb/Shout.png`), points: "20"},
+                  { src: require(`../assets/Barb/NaturalResistance.png`), points: "1"},
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`), points: "1"},
+                  { src: require(`../assets/Barb/BattleCommand.png`), points: "1"},
                 ]}
               />
               <BuildBanner
+                class="Barbarian"
                 tierLetter="A"
                 build="Berserker"
                 skillPix={[
-                  { src: require(`../assets/Barb/Berserk.png`) },
-                  { src: require(`../assets/Barb/SwordMastery.png`) },
-                  { src: require(`../assets/Barb/BattleOrders.png`) },
-                  { src: require(`../assets/Barb/Shout.png`) },
-                  { src: require(`../assets/Barb/Howl.png`) },
-                  { src: require(`../assets/Barb/Whirlwind.png`) },
-                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
-                  { src: require(`../assets/Barb/NaturalResistance.png`) },
-                  { src: require(`../assets/Barb/IronSkin.png`) },
-                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                  { src: require(`../assets/Barb/Berserk.png`), points: "20"},
+                  { src: require(`../assets/Barb/SwordMastery.png`), points: "20"},
+                  { src: require(`../assets/Barb/BattleOrders.png`), points: "20"},
+                  { src: require(`../assets/Barb/Shout.png`), points: "20"},
+                  { src: require(`../assets/Barb/Howl.png`), points: "20"},
+                  { src: require(`../assets/Barb/Whirlwind.png`), points: "1"},
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`), points: "1"},
+                  { src: require(`../assets/Barb/NaturalResistance.png`), points: "1"},
+                  { src: require(`../assets/Barb/IronSkin.png`), points: "1"},
+                  { src: require(`../assets/Barb/BattleCommand.png`), points: "1"},
                 ]}
               />
               <BuildBanner
+                class="Barbarian"
                 tierLetter="A"
                 build="Thrower"
                 skillPix={[
-                  { src: require(`../assets/Barb/DoubleThrow.png`) },
-                  { src: require(`../assets/Barb/DoubleSwing.png`) },
-                  { src: require(`../assets/Barb/ThrowingMastery.png`) },
-                  { src: require(`../assets/Barb/BattleOrders.png`) },
-                  { src: require(`../assets/Barb/Shout.png`) },
-                  { src: require(`../assets/Barb/NaturalResistance.png`) },
-                  { src: require(`../assets/Barb/IncreasedSpeed.png`) },
-                  { src: require(`../assets/Barb/IronSkin.png`) },
-                  { src: require(`../assets/Barb/Berserk.png`) },
-                  { src: require(`../assets/Barb/BattleCommand.png`) },
+                  { src: require(`../assets/Barb/DoubleThrow.png`), points: "20"},
+                  { src: require(`../assets/Barb/DoubleSwing.png`), points: "20"},
+                  { src: require(`../assets/Barb/ThrowingMastery.png`), points: "20"},
+                  { src: require(`../assets/Barb/BattleOrders.png`), points: "20"},
+                  { src: require(`../assets/Barb/Shout.png`), points: "5"},
+                  { src: require(`../assets/Barb/NaturalResistance.png`), points: "5"},
+                  { src: require(`../assets/Barb/IncreasedSpeed.png`), points: "5"},
+                  { src: require(`../assets/Barb/IronSkin.png`), points: "5"},
+                  { src: require(`../assets/Barb/Berserk.png`), points: "1"},
+                  { src: require(`../assets/Barb/BattleCommand.png`), points: "1"},
                 ]}
               />
 
               <Text style={styles.classText}>Necromancer</Text>
               <BuildBanner
+                class="Necromancer"
                 tierLetter="S"
                 build="Summoner"
                 skillPix={[
-                  { src: require(`../assets/Necro/RaiseSkeleton.png`) },
-                  { src: require(`../assets/Necro/SkeletonMastery.png`) },
-                  { src: require(`../assets/Necro/CorpseExplosion.png`) },
-                  { src: require(`../assets/Necro/RaiseSkeletalMage.png`) },
-                  { src: require(`../assets/Necro/GolemMastery.png`) },
-                  { src: require(`../assets/Necro/FireGolem.png`) },
-                  { src: require(`../assets/Necro/LowerResist.png`) },
-                  { src: require(`../assets/Necro/AmplifyDamage.png`) },
-                  { src: require(`../assets/Necro/DimVision.png`) },
+                  { src: require(`../assets/Necro/RaiseSkeleton.png`), points: "20"},
+                  { src: require(`../assets/Necro/SkeletonMastery.png`), points: "20"},
+                  { src: require(`../assets/Necro/CorpseExplosion.png`), points: "20"},
+                  { src: require(`../assets/Necro/RaiseSkeletalMage.png`), points: "20"},
+                  { src: require(`../assets/Necro/GolemMastery.png`), points: "20"},
+                  { src: require(`../assets/Necro/FireGolem.png`), points: "1"},
+                  { src: require(`../assets/Necro/LowerResist.png`), points: "1"},
+                  { src: require(`../assets/Necro/AmplifyDamage.png`), points: "1"},
+                  { src: require(`../assets/Necro/DimVision.png`), points: "3"},
                 ]}
               />
               <BuildBanner
+                class="Necromancer"
                 tierLetter="S"
                 build="Summoner MF%"
                 skillPix={[
-                  { src: require(`../assets/Necro/RaiseSkeleton.png`) },
-                  { src: require(`../assets/Necro/SkeletonMastery.png`) },
-                  { src: require(`../assets/Necro/CorpseExplosion.png`) },
-                  { src: require(`../assets/Necro/RaiseSkeletalMage.png`) },
-                  { src: require(`../assets/Necro/IronGolem.png`) },
-                  { src: require(`../assets/Necro/LowerResist.png`) },
-                  { src: require(`../assets/Necro/AmplifyDamage.png`) },
-                  { src: require(`../assets/Necro/DimVision.png`) },
+                  { src: require(`../assets/Necro/RaiseSkeleton.png`), points: "20"},
+                  { src: require(`../assets/Necro/SkeletonMastery.png`), points: "20"},
+                  { src: require(`../assets/Necro/CorpseExplosion.png`), points: "20"},
+                  { src: require(`../assets/Necro/RaiseSkeletalMage.png`), points: "20"},
+                  { src: require(`../assets/Necro/IronGolem.png`), points: "20"},
+                  { src: require(`../assets/Necro/LowerResist.png`), points: "1"},
+                  { src: require(`../assets/Necro/AmplifyDamage.png`), points: "1"},
+                  { src: require(`../assets/Necro/DimVision.png`), points: "3"},
                 ]}
               />
               <BuildBanner
+                class="Necromancer"
                 tierLetter="A"
                 build="Bones"
                 skillPix={[
-                  { src: require(`../assets/Necro/Teeth.png`) },
-                  { src: require(`../assets/Necro/BoneSpear.png`) },
-                  { src: require(`../assets/Necro/BoneSpirit.png`) },
-                  { src: require(`../assets/Necro/BoneWall.png`) },
-                  { src: require(`../assets/Necro/BonePrison.png`) },
-                  { src: require(`../assets/Necro/AmplifyDamage.png`) },
-                  { src: require(`../assets/Necro/BoneArmor.png`) },
-                  { src: require(`../assets/Necro/Revive.png`) },
-                  { src: require(`../assets/Necro/ClayGolem.png`) },
+                  { src: require(`../assets/Necro/Teeth.png`), points: "20"},
+                  { src: require(`../assets/Necro/BoneSpear.png`), points: "20"},
+                  { src: require(`../assets/Necro/BoneSpirit.png`), points: "20"},
+                  { src: require(`../assets/Necro/BoneWall.png`), points: "20"},
+                  { src: require(`../assets/Necro/BonePrison.png`), points: "20"},
+                  { src: require(`../assets/Necro/AmplifyDamage.png`), points: "1"},
+                  { src: require(`../assets/Necro/BoneArmor.png`), points: "1"},
+                  { src: require(`../assets/Necro/Revive.png`), points: "1"},
+                  { src: require(`../assets/Necro/ClayGolem.png`), points: "1"},
                 ]}
               />
               <BuildBanner
+                class="Necromancer"
                 tierLetter="A"
                 build="Poison Nova"
                 skillPix={[
-                  { src: require(`../assets/Necro/PoisonDagger.png`) },
-                  { src: require(`../assets/Necro/PoisonExplosion.png`) },
-                  { src: require(`../assets/Necro/PoisonNova.png`) },
-                  { src: require(`../assets/Necro/CorpseExplosion.png`) },
-                  { src: require(`../assets/Necro/BoneArmor.png`) },
-                  { src: require(`../assets/Necro/LowerResist.png`) },
-                  { src: require(`../assets/Necro/ClayGolem.png`) },
-                  { src: require(`../assets/Necro/Revive.png`) },
+                  { src: require(`../assets/Necro/PoisonDagger.png`), points: "20"},
+                  { src: require(`../assets/Necro/PoisonExplosion.png`), points: "20"},
+                  { src: require(`../assets/Necro/PoisonNova.png`), points: "20"},
+                  { src: require(`../assets/Necro/CorpseExplosion.png`), points: "20"},
+                  { src: require(`../assets/Necro/BoneArmor.png`), points: "10"},
+                  { src: require(`../assets/Necro/LowerResist.png`), points: "1"},
+                  { src: require(`../assets/Necro/ClayGolem.png`), points: "1"},
+                  { src: require(`../assets/Necro/Revive.png`), points: "1"},
                 ]}
               />
               <BuildBanner
+                class="Necromancer"
                 tierLetter="B"
                 build="Exploder"
                 skillPix={[
-                  { src: require(`../assets/Necro/CorpseExplosion.png`) },
-                  { src: require(`../assets/Necro/AmplifyDamage.png`) },
-                  { src: require(`../assets/Necro/BoneWall.png`) },
-                  { src: require(`../assets/Necro/BonePrison.png`) },
-                  { src: require(`../assets/Necro/BoneArmor.png`) },
-                  { src: require(`../assets/Necro/GolemMastery.png`) },
-                  { src: require(`../assets/Necro/FireGolem.png`) },
-                  { src: require(`../assets/Necro/SummonResist.png`) },
+                  { src: require(`../assets/Necro/CorpseExplosion.png`), points: "20"},
+                  { src: require(`../assets/Necro/AmplifyDamage.png`), points: "20"},
+                  { src: require(`../assets/Necro/BoneWall.png`), points: "20"},
+                  { src: require(`../assets/Necro/BonePrison.png`), points: "10"},
+                  { src: require(`../assets/Necro/BoneArmor.png`), points: "1"},
+                  { src: require(`../assets/Necro/GolemMastery.png`), points: "20"},
+                  { src: require(`../assets/Necro/FireGolem.png`), points: "2"},
+                  { src: require(`../assets/Necro/SummonResist.png`), points: "3"},
                 ]}
               />
 
               <Text style={styles.classText}>Paladin</Text>
               <BuildBanner
+                class="Paladin"
                 tierLetter="S"
                 build="Hammerdin"
                 skillPix={[
-                  { src: require(`../assets/Pala/BlessedHammer.png`) },
-                  { src: require(`../assets/Pala/Vigor.png`) },
-                  { src: require(`../assets/Pala/BlessedAim.png`) },
-                  { src: require(`../assets/Pala/Concentration.png`) },
-                  { src: require(`../assets/Pala/HolyShield.png`) },
+                  { src: require(`../assets/Pala/BlessedHammer.png`), points: "20"},
+                  { src: require(`../assets/Pala/Vigor.png`), points: "20"},
+                  { src: require(`../assets/Pala/BlessedAim.png`), points: "20"},
+                  { src: require(`../assets/Pala/Concentration.png`), points: "20"},
+                  { src: require(`../assets/Pala/HolyShield.png`), points: "20"},
                 ]}
               />
               <BuildBanner
+                class="Paladin"
                 tierLetter="S"
                 build="Hammerdin MF%"
                 skillPix={[
-                  { src: require(`../assets/Pala/BlessedHammer.png`) },
-                  { src: require(`../assets/Pala/Vigor.png`) },
-                  { src: require(`../assets/Pala/BlessedAim.png`) },
-                  { src: require(`../assets/Pala/Concentration.png`) },
-                  { src: require(`../assets/Pala/HolyShield.png`) },
+                  { src: require(`../assets/Pala/BlessedHammer.png`), points: "20"},
+                  { src: require(`../assets/Pala/Vigor.png`), points: "20"},
+                  { src: require(`../assets/Pala/BlessedAim.png`), points: "20"},
+                  { src: require(`../assets/Pala/Concentration.png`), points: "20"},
+                  { src: require(`../assets/Pala/HolyShield.png`), points: "20"},
                 ]}
               />
               <BuildBanner
+                class="Paladin"
                 tierLetter="A"
                 build="Fist Of Heaven"
                 skillPix={[
-                  { src: require(`../assets/Pala/FistOfHeavens.png`) },
-                  { src: require(`../assets/Pala/HolyShock.png`) },
-                  { src: require(`../assets/Pala/HolyBolt.png`) },
-                  { src: require(`../assets/Pala/HolyShield.png`) },
-                  { src: require(`../assets/Pala/Conviction.png`) },
-                  { src: require(`../assets/Pala/Smite.png`) },
+                  { src: require(`../assets/Pala/FistOfHeavens.png`), points: "20"},
+                  { src: require(`../assets/Pala/HolyShock.png`), points: "20"},
+                  { src: require(`../assets/Pala/HolyBolt.png`), points: "20"},
+                  { src: require(`../assets/Pala/HolyShield.png`), points: "10"},
+                  { src: require(`../assets/Pala/Conviction.png`), points: "10"},
+                  { src: require(`../assets/Pala/Smite.png`), points: "1"},
                 ]}
               />
               <BuildBanner
+                class="Paladin"
                 tierLetter="A"
                 build="Smiter"
                 skillPix={[
-                  { src: require(`../assets/Pala/Smite.png`) },
-                  { src: require(`../assets/Pala/HolyShield.png`) },
-                  { src: require(`../assets/Pala/Fanaticism.png`) },
-                  { src: require(`../assets/Pala/Vengeance.png`) },
-                  { src: require(`../assets/Pala/ResistFire.png`) },
+                  { src: require(`../assets/Pala/Smite.png`), points: "20"},
+                  { src: require(`../assets/Pala/HolyShield.png`), points: "20"},
+                  { src: require(`../assets/Pala/Fanaticism.png`), points: "20"},
+                  { src: require(`../assets/Pala/Vengeance.png`), points: "20"},
+                  { src: require(`../assets/Pala/ResistFire.png`), points: "20"},
                 ]}
               />
               <BuildBanner
+                class="Paladin"
                 tierLetter="A"
                 build="Zealer"
                 skillPix={[
-                  { src: require(`../assets/Pala/Sacrifice.png`) },
-                  { src: require(`../assets/Pala/Defiance.png`) },
-                  { src: require(`../assets/Pala/Zeal.png`) },
-                  { src: require(`../assets/Pala/HolyShield.png`) },
-                  { src: require(`../assets/Pala/Fanaticism.png`) },
+                  { src: require(`../assets/Pala/Sacrifice.png`), points: "20"},
+                  { src: require(`../assets/Pala/Defiance.png`), points: "20"},
+                  { src: require(`../assets/Pala/Zeal.png`), points: "20"},
+                  { src: require(`../assets/Pala/HolyShield.png`), points: "20"},
+                  { src: require(`../assets/Pala/Fanaticism.png`), points: "20"},
                 ]}
               />
 
               <Text style={styles.classText}>Amazon</Text>
               <BuildBanner
+                class="Amazon"
                 tierLetter="A"
                 build="Archer"
                 skillPix={[
-                  { src: require(`../assets/Ama/Strafe.png`) },
-                  { src: require(`../assets/Ama/MultipleShot.png`) },
-                  { src: require(`../assets/Ama/Valkyrie.png`) },
-                  { src: require(`../assets/Ama/Penetrate.png`) },
-                  { src: require(`../assets/Ama/CriticalStrike.png`) },
-                  { src: require(`../assets/Ama/Pierce.png`) },
-                  { src: require(`../assets/Ama/Avoid.png`) },
-                  { src: require(`../assets/Ama/Evade.png`) },
-                  { src: require(`../assets/Ama/Dodge.png`) },
+                  { src: require(`../assets/Ama/Strafe.png`), points: "20"},
+                  { src: require(`../assets/Ama/MultipleShot.png`), points: "20"},
+                  { src: require(`../assets/Ama/Valkyrie.png`), points: "20"},
+                  { src: require(`../assets/Ama/Penetrate.png`), points: "5"},
+                  { src: require(`../assets/Ama/CriticalStrike.png`), points: "5"},
+                  { src: require(`../assets/Ama/Pierce.png`), points: "5"},
+                  { src: require(`../assets/Ama/Avoid.png`), points: "5"},
+                  { src: require(`../assets/Ama/Evade.png`), points: "5"},
+                  { src: require(`../assets/Ama/Dodge.png`), points: "5"},
                 ]}
               />
               <BuildBanner
+                class="Amazon"
                 tierLetter="A"
                 build="Light FuryZon"
                 skillPix={[
-                  { src: require(`../assets/Ama/ChargedStrike.png`) },
-                  { src: require(`../assets/Ama/LightningStrike.png`) },
-                  { src: require(`../assets/Ama/LightningFury.png`) },
-                  { src: require(`../assets/Ama/PowerStrike.png`) },
-                  { src: require(`../assets/Ama/Pierce.png`) },
-                  { src: require(`../assets/Ama/CriticalStrike.png`) },
-                  { src: require(`../assets/Ama/Evade.png`) },
-                  { src: require(`../assets/Ama/Avoid.png`) },
-                  { src: require(`../assets/Ama/Dodge.png`) },
+                  { src: require(`../assets/Ama/ChargedStrike.png`), points: "20"},
+                  { src: require(`../assets/Ama/LightningStrike.png`), points: "20"},
+                  { src: require(`../assets/Ama/LightningFury.png`), points: "20"},
+                  { src: require(`../assets/Ama/PowerStrike.png`), points: "20"},
+                  { src: require(`../assets/Ama/Pierce.png`), points: "5"},
+                  { src: require(`../assets/Ama/CriticalStrike.png`), points: "5"},
+                  { src: require(`../assets/Ama/Evade.png`), points: "5"},
+                  { src: require(`../assets/Ama/Avoid.png`), points: "5"},
+                  { src: require(`../assets/Ama/Dodge.png`), points: "5"},
                 ]}
               />
               <BuildBanner
+                class="Amazon"
                 tierLetter="A"
                 build="Ice BowaZon"
                 skillPix={[
-                  { src: require(`../assets/Ama/ColdArrow.png`) },
-                  { src: require(`../assets/Ama/IceArrow.png`) },
-                  { src: require(`../assets/Ama/FreezingArrow.png`) },
-                  { src: require(`../assets/Ama/Valkyrie.png`) },
-                  { src: require(`../assets/Ama/CriticalStrike.png`) },
-                  { src: require(`../assets/Ama/Pierce.png`) },
-                  { src: require(`../assets/Ama/Avoid.png`) },
-                  { src: require(`../assets/Ama/Evade.png`) },
+                  { src: require(`../assets/Ama/ColdArrow.png`), points: "20"},
+                  { src: require(`../assets/Ama/IceArrow.png`), points: "20"},
+                  { src: require(`../assets/Ama/FreezingArrow.png`), points: "20"},
+                  { src: require(`../assets/Ama/Valkyrie.png`), points: "20"},
+                  { src: require(`../assets/Ama/CriticalStrike.png`), points: "5"},
+                  { src: require(`../assets/Ama/Pierce.png`), points: "5"},
+                  { src: require(`../assets/Ama/Avoid.png`), points: "5"},
+                  { src: require(`../assets/Ama/Evade.png`), points: "5"},
                 ]}
               />
               <BuildBanner
+                class="Amazon"
                 tierLetter="B"
                 build="Fire BowaZon"
                 skillPix={[
-                  { src: require(`../assets/Ama/ImmolationArrow.png`) },
-                  { src: require(`../assets/Ama/ExplodingArrow.png`) },
-                  { src: require(`../assets/Ama/FireArrow.png`) },
-                  { src: require(`../assets/Ama/Valkyrie.png`) },
-                  { src: require(`../assets/Ama/CriticalStrike.png`) },
-                  { src: require(`../assets/Ama/Pierce.png`) },
-                  { src: require(`../assets/Ama/Avoid.png`) },
-                  { src: require(`../assets/Ama/Evade.png`) },
+                  { src: require(`../assets/Ama/ImmolationArrow.png`), points: "20"},
+                  { src: require(`../assets/Ama/ExplodingArrow.png`), points: "20"},
+                  { src: require(`../assets/Ama/FireArrow.png`), points: "20"},
+                  { src: require(`../assets/Ama/Valkyrie.png`), points: "20"},
+                  { src: require(`../assets/Ama/CriticalStrike.png`), points: "5"},
+                  { src: require(`../assets/Ama/Pierce.png`), points: "5"},
+                  { src: require(`../assets/Ama/Avoid.png`), points: "5"},
+                  { src: require(`../assets/Ama/Evade.png`), points: "5"},
                 ]}
               />
               <BuildBanner
+                class="Amazon"
                 tierLetter="B"
                 build="Poison"
                 skillPix={[
-                  { src: require(`../assets/Ama/PlagueJavelin.png`) },
-                  { src: require(`../assets/Ama/PoisonJavelin.png`) },
-                  { src: require(`../assets/Ama/Valkyrie.png`) },
-                  { src: require(`../assets/Ama/Pierce.png`) },
-                  { src: require(`../assets/Ama/CriticalStrike.png`) },
-                  { src: require(`../assets/Ama/Penetrate.png`) },
-                  { src: require(`../assets/Ama/Evade.png`) },
-                  { src: require(`../assets/Ama/Avoid.png`) },
-                  { src: require(`../assets/Ama/Dodge.png`) },
-                  { src: require(`../assets/Ama/LightningFury.png`) },
+                  { src: require(`../assets/Ama/PlagueJavelin.png`), points: "20"},
+                  { src: require(`../assets/Ama/PoisonJavelin.png`), points: "20"},
+                  { src: require(`../assets/Ama/Valkyrie.png`), points: "20"},
+                  { src: require(`../assets/Ama/Pierce.png`), points: "10"},
+                  { src: require(`../assets/Ama/CriticalStrike.png`), points: "5"},
+                  { src: require(`../assets/Ama/Penetrate.png`), points: "5"},
+                  { src: require(`../assets/Ama/Evade.png`), points: "5"},
+                  { src: require(`../assets/Ama/Avoid.png`), points: "5"},
+                  { src: require(`../assets/Ama/Dodge.png`), points: "5"},
+                  { src: require(`../assets/Ama/LightningFury.png`), points: "5"},
                 ]}
               />
 
               <Text style={styles.classText}>Assassin</Text>
               <BuildBanner
+                class="Assassin"
                 tierLetter="A"
                 build="Light Trapper"
                 skillPix={[
-                  { src: require(`../assets/Assa/FireBlast.png`) },
-                  { src: require(`../assets/Assa/ShockWeb.png`) },
-                  { src: require(`../assets/Assa/ChargedBoltSentry.png`) },
-                  { src: require(`../assets/Assa/LightningSentry.png`) },
-                  { src: require(`../assets/Assa/DeathSentry.png`) },
-                  { src: require(`../assets/Assa/WeaponBlock.png`) },
-                  { src: require(`../assets/Assa/BurstOfSpeed.png`) },
-                  { src: require(`../assets/Assa/MindBlast.png`) },
+                  { src: require(`../assets/Assa/FireBlast.png`), points: "20"},
+                  { src: require(`../assets/Assa/ShockWeb.png`), points: "20"},
+                  { src: require(`../assets/Assa/ChargedBoltSentry.png`), points: "20"},
+                  { src: require(`../assets/Assa/LightningSentry.png`), points: "20"},
+                  { src: require(`../assets/Assa/DeathSentry.png`), points: "-"},
+                  { src: require(`../assets/Assa/WeaponBlock.png`), points: "5"},
+                  { src: require(`../assets/Assa/BurstOfSpeed.png`), points: "1"},
+                  { src: require(`../assets/Assa/MindBlast.png`), points: "1"},
                 ]}
               />
               <BuildBanner
+                class="Assassin"
                 tierLetter="B"
                 build="WhirlWind Assa"
                 skillPix={[
-                  { src: require(`../assets/Assa/ShadowMaster.png`) },
-                  { src: require(`../assets/Assa/Venom.png`) },
-                  { src: require(`../assets/Assa/ClawMastery.png`) },
-                  { src: require(`../assets/Assa/Fade.png`) },
-                  { src: require(`../assets/Assa/WeaponBlock.png`) },
-                  { src: require(`../assets/Assa/DragonFlight.png`) },
-                  { src: require(`../assets/Assa/BurstOfSpeed.png`) },
-                  { src: require(`../assets/Assa/BladeSentinel.png`) },
+                  { src: require(`../assets/Assa/ShadowMaster.png`), points: "20"},
+                  { src: require(`../assets/Assa/Venom.png`), points: "20"},
+                  { src: require(`../assets/Assa/ClawMastery.png`), points: "20"},
+                  { src: require(`../assets/Assa/Fade.png`), points: "20"},
+                  { src: require(`../assets/Assa/WeaponBlock.png`), points: "1"},
+                  { src: require(`../assets/Assa/DragonFlight.png`), points: "1"},
+                  { src: require(`../assets/Assa/BurstOfSpeed.png`), points: "1"},
+                  { src: require(`../assets/Assa/BladeSentinel.png`), points: "+1"},
                 ]}
               />
               <BuildBanner
+                class="Assassin"
                 tierLetter="B"
                 build="Elemental Assa"
                 skillPix={[
-                  { src: require(`../assets/Assa/PhoenixStrike.png`) },
-                  { src: require(`../assets/Assa/DragonTalon.png`) },
-                  { src: require(`../assets/Assa/DeathSentry.png`) },
-                  { src: require(`../assets/Assa/ShadowMaster.png`) },
-                  { src: require(`../assets/Assa/ClawMastery.png`) },
-                  { src: require(`../assets/Assa/BurstOfSpeed.png`) },
+                  { src: require(`../assets/Assa/PhoenixStrike.png`), points: "20"},
+                  { src: require(`../assets/Assa/DragonTalon.png`), points: "20"},
+                  { src: require(`../assets/Assa/DeathSentry.png`), points: "19"},
+                  { src: require(`../assets/Assa/ShadowMaster.png`), points: "17"},
+                  { src: require(`../assets/Assa/ClawMastery.png`), points: "16"},
+                  { src: require(`../assets/Assa/BurstOfSpeed.png`), points: "1"},
                 ]}
               />
 
               <Text style={styles.classText}>Druid</Text>
               <BuildBanner
+                class="Druid"
                 tierLetter="A"
                 build="Tornado"
                 skillPix={[
-                  { src: require(`../assets/Drod/CycloneArmor.png`) },
-                  { src: require(`../assets/Drod/Twister.png`) },
-                  { src: require(`../assets/Drod/Tornado.png`) },
-                  { src: require(`../assets/Drod/Hurricane.png`) },
-                  { src: require(`../assets/Drod/OakSage.png`) },
+                  { src: require(`../assets/Drod/CycloneArmor.png`), points: "20"},
+                  { src: require(`../assets/Drod/Twister.png`), points: "20"},
+                  { src: require(`../assets/Drod/Tornado.png`), points: "20"},
+                  { src: require(`../assets/Drod/Hurricane.png`), points: "20"},
+                  { src: require(`../assets/Drod/OakSage.png`), points: "20"},
                 ]}
               />
               <BuildBanner
+                class="Druid"
                 tierLetter="A"
                 build="Fire Druid"
                 skillPix={[
-                  { src: require(`../assets/Drod/Firestorm.png`) },
-                  { src: require(`../assets/Drod/MoltenBoulder.png`) },
-                  { src: require(`../assets/Drod/Fissure.png`) },
-                  { src: require(`../assets/Drod/Volcano.png`) },
-                  { src: require(`../assets/Drod/Armageddon.png`) },
-                  { src: require(`../assets/Drod/OakSage.png`) },
+                  { src: require(`../assets/Drod/Firestorm.png`), points: "20"},
+                  { src: require(`../assets/Drod/MoltenBoulder.png`), points: "20"},
+                  { src: require(`../assets/Drod/Fissure.png`), points: "20"},
+                  { src: require(`../assets/Drod/Volcano.png`), points: "20"},
+                  { src: require(`../assets/Drod/Armageddon.png`), points: "20"},
+                  { src: require(`../assets/Drod/OakSage.png`), points: "1"},
                 ]}
               />
               <BuildBanner
+                class="Druid"
                 tierLetter="B"
                 build="Rabies Druid"
                 skillPix={[
-                  { src: require(`../assets/Drod/Rabies.png`) },
-                  { src: require(`../assets/Drod/PoisonCreeper.png`) },
-                  { src: require(`../assets/Drod/Lycanthropy.png`) },
-                  { src: require(`../assets/Drod/HeartofWolverine.png`) },
-                  { src: require(`../assets/Drod/Werewolf.png`) },
+                  { src: require(`../assets/Drod/Rabies.png`), points: "20"},
+                  { src: require(`../assets/Drod/PoisonCreeper.png`), points: "20"},
+                  { src: require(`../assets/Drod/Lycanthropy.png`), points: "20"},
+                  { src: require(`../assets/Drod/HeartofWolverine.png`), points: "20"},
+                  { src: require(`../assets/Drod/Werewolf.png`), points: "20"},
                 ]}
               />
               <BuildBanner
+                class="Druid"
                 tierLetter="B"
                 build="Werewolf Druid"
                 skillPix={[
-                  { src: require(`../assets/Drod/Fury.png`) },
-                  { src: require(`../assets/Drod/Hurricane.png`) },
-                  { src: require(`../assets/Drod/Lycanthropy.png`) },
-                  { src: require(`../assets/Drod/HeartofWolverine.png`) },
-                  { src: require(`../assets/Drod/Werewolf.png`) },
+                  { src: require(`../assets/Drod/Fury.png`), points: "20"},
+                  { src: require(`../assets/Drod/Hurricane.png`), points: "20"},
+                  { src: require(`../assets/Drod/Lycanthropy.png`), points: "20"},
+                  { src: require(`../assets/Drod/HeartofWolverine.png`), points: "20"},
+                  { src: require(`../assets/Drod/Werewolf.png`), points: "20"},
                 ]}
               />
               <BuildBanner
+                class="Druid"
                 tierLetter="B"
                 build="Full Zoo Druid"
                 skillPix={[
-                  { src: require(`../assets/Drod/Raven.png`) },
-                  { src: require(`../assets/Drod/SummonDireWolf.png`) },
-                  { src: require(`../assets/Drod/SummonSpiritWolf.png`) },
-                  { src: require(`../assets/Drod/SummonGrizzly.png`) },
-                  { src: require(`../assets/Drod/HeartofWolverine.png`) },
-                  { src: require(`../assets/Drod/CarrionVine.png`) },
+                  { src: require(`../assets/Drod/Raven.png`), points: "20"},
+                  { src: require(`../assets/Drod/SummonDireWolf.png`), points: "20"},
+                  { src: require(`../assets/Drod/SummonSpiritWolf.png`), points: "20"},
+                  { src: require(`../assets/Drod/SummonGrizzly.png`), points: "20"},
+                  { src: require(`../assets/Drod/HeartofWolverine.png`), points: "20"},
+                  { src: require(`../assets/Drod/CarrionVine.png`), points: "1"},
                 ]}
               />
               <BuildBanner
+                class="Druid"
                 tierLetter="B"
                 build="WhereBear"
                 skillPix={[
-                  { src: require(`../assets/Drod/Werebear.png`) },
-                  { src: require(`../assets/Drod/Lycanthropy.png`) },
-                  { src: require(`../assets/Drod/FireClaws.png`) },
-                  { src: require(`../assets/Drod/Firestorm.png`) },
-                  { src: require(`../assets/Drod/Rabies.png`) },
-                  { src: require(`../assets/Drod/Fury.png`) },
-                  { src: require(`../assets/Drod/Hunger.png`) },
+                  { src: require(`../assets/Drod/Werebear.png`), points: "20"},
+                  { src: require(`../assets/Drod/Lycanthropy.png`), points: "20"},
+                  { src: require(`../assets/Drod/FireClaws.png`), points: "20"},
+                  { src: require(`../assets/Drod/Firestorm.png`), points: "20"},
+                  { src: require(`../assets/Drod/Rabies.png`), points: "1"},
+                  { src: require(`../assets/Drod/Fury.png`), points: "1"},
+                  { src: require(`../assets/Drod/Hunger.png`), points: "1"},
                 ]}
               />
             </View>

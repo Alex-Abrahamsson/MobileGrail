@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, View, Pressable, Dimensions, FlatList } from "react-native";
-import SetPeices from "../config/SetPeices";
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT_MODAL = 600;
