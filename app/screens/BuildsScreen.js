@@ -32,13 +32,13 @@ function BuildsScreen({ navigation }) {
                 tierLetter="S"
                 build="Frozen Orb"
                 skillPix={[
-                  { src: require(`../assets/FrozenOrb.png`) },
-                  { src: require(`../assets/IceBlast.png`) },
-                  { src: require(`../assets/IceBolt.png`) },
-                  { src: require(`../assets/ColdMastery.png`) },
-                  { src: require(`../assets/Warmth.png`) },
-                  { src: require(`../assets/Teleport.png`) },
-                  { src: require(`../assets/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/FrozenOrb.png`) },
+                  { src: require(`../assets/Sorc/IceBlast.png`) },
+                  { src: require(`../assets/Sorc/IceBolt.png`) },
+                  { src: require(`../assets/Sorc/ColdMastery.png`) },
+                  { src: require(`../assets/Sorc/Warmth.png`) },
+                  { src: require(`../assets/Sorc/Teleport.png`) },
+                  { src: require(`../assets/Sorc/EnergyShield.png`) },
                 ]}
               />
 
@@ -46,13 +46,13 @@ function BuildsScreen({ navigation }) {
                 tierLetter="A"
                 build="Blizzard Build"
                 skillPix={[
-                  { src: require(`../assets/Blizzard.png`) },
-                  { src: require(`../assets/FrostNova.png`) },
-                  { src: require(`../assets/IceBlast.png`) },
-                  { src: require(`../assets/IceBolt.png`) },
-                  { src: require(`../assets/ColdMastery.png`) },
-                  { src: require(`../assets/Teleport.png`) },
-                  { src: require(`../assets/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/Blizzard.png`) },
+                  { src: require(`../assets/Sorc/FrostNova.png`) },
+                  { src: require(`../assets/Sorc/IceBlast.png`) },
+                  { src: require(`../assets/Sorc/IceBolt.png`) },
+                  { src: require(`../assets/Sorc/ColdMastery.png`) },
+                  { src: require(`../assets/Sorc/Teleport.png`) },
+                  { src: require(`../assets/Sorc/EnergyShield.png`) },
                 ]}
               />
 
@@ -60,14 +60,14 @@ function BuildsScreen({ navigation }) {
                 tierLetter="A"
                 build="Fire MeteOrb"
                 skillPix={[
-                  { src: require(`../assets/FireBolt.png`) },
-                  { src: require(`../assets/FireBall.png`) },
-                  { src: require(`../assets/Meteor.png`) },
-                  { src: require(`../assets/FireMastery.png`) },
-                  { src: require(`../assets/FrozenArmor.png`) },
-                  { src: require(`../assets/FrozenOrb.png`) },
-                  { src: require(`../assets/ColdMastery.png`) },
-                  { src: require(`../assets/Teleport.png`) },
+                  { src: require(`../assets/Sorc/FireBolt.png`) },
+                  { src: require(`../assets/Sorc/FireBall.png`) },
+                  { src: require(`../assets/Sorc/Meteor.png`) },
+                  { src: require(`../assets/Sorc/FireMastery.png`) },
+                  { src: require(`../assets/Sorc/FrozenArmor.png`) },
+                  { src: require(`../assets/Sorc/FrozenOrb.png`) },
+                  { src: require(`../assets/Sorc/ColdMastery.png`) },
+                  { src: require(`../assets/Sorc/Teleport.png`) },
                 ]}
               />
 
@@ -75,13 +75,13 @@ function BuildsScreen({ navigation }) {
                 tierLetter="A"
                 build="Chain Lightning"
                 skillPix={[
-                  { src: require(`../assets/ChargedBolt.png`) },
-                  { src: require(`../assets/Lightning.png`) },
-                  { src: require(`../assets/ChainLightning.png`) },
-                  { src: require(`../assets/Nova.png`) },
-                  { src: require(`../assets/LightningMastery.png`) },
-                  { src: require(`../assets/Teleport.png`) },
-                  { src: require(`../assets/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/ChargedBolt.png`) },
+                  { src: require(`../assets/Sorc/Lightning.png`) },
+                  { src: require(`../assets/Sorc/ChainLightning.png`) },
+                  { src: require(`../assets/Sorc/Nova.png`) },
+                  { src: require(`../assets/Sorc/LightningMastery.png`) },
+                  { src: require(`../assets/Sorc/Teleport.png`) },
+                  { src: require(`../assets/Sorc/EnergyShield.png`) },
                 ]}
               />
 
@@ -89,14 +89,14 @@ function BuildsScreen({ navigation }) {
                 tierLetter="A"
                 build="Blizzard MF%"
                 skillPix={[
-                  { src: require(`../assets/Blizzard.png`) },
-                  { src: require(`../assets/FrostNova.png`) },
-                  { src: require(`../assets/GlacialSpike.png`) },
-                  { src: require(`../assets/IceBlast.png`) },
-                  { src: require(`../assets/IceBolt.png`) },
-                  { src: require(`../assets/ColdMastery.png`) },
-                  { src: require(`../assets/Teleport.png`) },
-                  { src: require(`../assets/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/Blizzard.png`) },
+                  { src: require(`../assets/Sorc/FrostNova.png`) },
+                  { src: require(`../assets/Sorc/GlacialSpike.png`) },
+                  { src: require(`../assets/Sorc/IceBlast.png`) },
+                  { src: require(`../assets/Sorc/IceBolt.png`) },
+                  { src: require(`../assets/Sorc/ColdMastery.png`) },
+                  { src: require(`../assets/Sorc/Teleport.png`) },
+                  { src: require(`../assets/Sorc/EnergyShield.png`) },
                 ]}
               />
 
@@ -104,13 +104,13 @@ function BuildsScreen({ navigation }) {
                 tierLetter="B"
                 build="Firewall"
                 skillPix={[
-                  { src: require(`../assets/Inferno.png`) },
-                  { src: require(`../assets/Blaze.png`) },
-                  { src: require(`../assets/FireWall.png`) },
-                  { src: require(`../assets/FireMastery.png`) },
-                  { src: require(`../assets/FrozenOrb.png`) },
-                  { src: require(`../assets/Teleport.png`) },
-                  { src: require(`../assets/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/Inferno.png`) },
+                  { src: require(`../assets/Sorc/Blaze.png`) },
+                  { src: require(`../assets/Sorc/FireWall.png`) },
+                  { src: require(`../assets/Sorc/FireMastery.png`) },
+                  { src: require(`../assets/Sorc/FrozenOrb.png`) },
+                  { src: require(`../assets/Sorc/Teleport.png`) },
+                  { src: require(`../assets/Sorc/EnergyShield.png`) },
                 ]}
               />
 
@@ -118,12 +118,12 @@ function BuildsScreen({ navigation }) {
                 tierLetter="C"
                 build="Melee Enchantress"
                 skillPix={[
-                  { src: require(`../assets/Telekinesis.png`) },
-                  { src: require(`../assets/EnergyShield.png`) },
-                  { src: require(`../assets/Warmth.png`) },
-                  { src: require(`../assets/Enchant.png`) },
-                  { src: require(`../assets/Teleport.png`) },
-                  { src: require(`../assets/FrozenArmor.png`) },
+                  { src: require(`../assets/Sorc/Telekinesis.png`) },
+                  { src: require(`../assets/Sorc/EnergyShield.png`) },
+                  { src: require(`../assets/Sorc/Warmth.png`) },
+                  { src: require(`../assets/Sorc/Enchant.png`) },
+                  { src: require(`../assets/Sorc/Teleport.png`) },
+                  { src: require(`../assets/Sorc/FrozenArmor.png`) },
                 ]}
               />
 
@@ -335,6 +335,196 @@ function BuildsScreen({ navigation }) {
                   { src: require(`../assets/Pala/Fanaticism.png`) },
                 ]}
               />
+
+              <Text style={styles.classText}>Amazon</Text>
+              <BuildBanner
+                tierLetter="A"
+                build="Archer"
+                skillPix={[
+                  { src: require(`../assets/Ama/Strafe.png`) },
+                  { src: require(`../assets/Ama/MultipleShot.png`) },
+                  { src: require(`../assets/Ama/Valkyrie.png`) },
+                  { src: require(`../assets/Ama/Penetrate.png`) },
+                  { src: require(`../assets/Ama/CriticalStrike.png`) },
+                  { src: require(`../assets/Ama/Pierce.png`) },
+                  { src: require(`../assets/Ama/Avoid.png`) },
+                  { src: require(`../assets/Ama/Evade.png`) },
+                  { src: require(`../assets/Ama/Dodge.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Light FuryZon"
+                skillPix={[
+                  { src: require(`../assets/Ama/ChargedStrike.png`) },
+                  { src: require(`../assets/Ama/LightningStrike.png`) },
+                  { src: require(`../assets/Ama/LightningFury.png`) },
+                  { src: require(`../assets/Ama/PowerStrike.png`) },
+                  { src: require(`../assets/Ama/Pierce.png`) },
+                  { src: require(`../assets/Ama/CriticalStrike.png`) },
+                  { src: require(`../assets/Ama/Evade.png`) },
+                  { src: require(`../assets/Ama/Avoid.png`) },
+                  { src: require(`../assets/Ama/Dodge.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Ice BowaZon"
+                skillPix={[
+                  { src: require(`../assets/Ama/ColdArrow.png`) },
+                  { src: require(`../assets/Ama/IceArrow.png`) },
+                  { src: require(`../assets/Ama/FreezingArrow.png`) },
+                  { src: require(`../assets/Ama/Valkyrie.png`) },
+                  { src: require(`../assets/Ama/CriticalStrike.png`) },
+                  { src: require(`../assets/Ama/Pierce.png`) },
+                  { src: require(`../assets/Ama/Avoid.png`) },
+                  { src: require(`../assets/Ama/Evade.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="Fire BowaZon"
+                skillPix={[
+                  { src: require(`../assets/Ama/ImmolationArrow.png`) },
+                  { src: require(`../assets/Ama/ExplodingArrow.png`) },
+                  { src: require(`../assets/Ama/FireArrow.png`) },
+                  { src: require(`../assets/Ama/Valkyrie.png`) },
+                  { src: require(`../assets/Ama/CriticalStrike.png`) },
+                  { src: require(`../assets/Ama/Pierce.png`) },
+                  { src: require(`../assets/Ama/Avoid.png`) },
+                  { src: require(`../assets/Ama/Evade.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="Poison"
+                skillPix={[
+                  { src: require(`../assets/Ama/PlagueJavelin.png`) },
+                  { src: require(`../assets/Ama/PoisonJavelin.png`) },
+                  { src: require(`../assets/Ama/Valkyrie.png`) },
+                  { src: require(`../assets/Ama/Pierce.png`) },
+                  { src: require(`../assets/Ama/CriticalStrike.png`) },
+                  { src: require(`../assets/Ama/Penetrate.png`) },
+                  { src: require(`../assets/Ama/Evade.png`) },
+                  { src: require(`../assets/Ama/Avoid.png`) },
+                  { src: require(`../assets/Ama/Dodge.png`) },
+                  { src: require(`../assets/Ama/LightningFury.png`) },
+                ]}
+              />
+
+              <Text style={styles.classText}>Assassin</Text>
+              <BuildBanner
+                tierLetter="A"
+                build="Light Trapper"
+                skillPix={[
+                  { src: require(`../assets/Assa/FireBlast.png`) },
+                  { src: require(`../assets/Assa/ShockWeb.png`) },
+                  { src: require(`../assets/Assa/ChargedBoltSentry.png`) },
+                  { src: require(`../assets/Assa/LightningSentry.png`) },
+                  { src: require(`../assets/Assa/DeathSentry.png`) },
+                  { src: require(`../assets/Assa/WeaponBlock.png`) },
+                  { src: require(`../assets/Assa/BurstOfSpeed.png`) },
+                  { src: require(`../assets/Assa/MindBlast.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="WhirlWind Assa"
+                skillPix={[
+                  { src: require(`../assets/Assa/ShadowMaster.png`) },
+                  { src: require(`../assets/Assa/Venom.png`) },
+                  { src: require(`../assets/Assa/ClawMastery.png`) },
+                  { src: require(`../assets/Assa/Fade.png`) },
+                  { src: require(`../assets/Assa/WeaponBlock.png`) },
+                  { src: require(`../assets/Assa/DragonFlight.png`) },
+                  { src: require(`../assets/Assa/BurstOfSpeed.png`) },
+                  { src: require(`../assets/Assa/BladeSentinel.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="Elemental Assa"
+                skillPix={[
+                  { src: require(`../assets/Assa/PhoenixStrike.png`) },
+                  { src: require(`../assets/Assa/DragonTalon.png`) },
+                  { src: require(`../assets/Assa/DeathSentry.png`) },
+                  { src: require(`../assets/Assa/ShadowMaster.png`) },
+                  { src: require(`../assets/Assa/ClawMastery.png`) },
+                  { src: require(`../assets/Assa/BurstOfSpeed.png`) },
+                ]}
+              />
+
+              <Text style={styles.classText}>Druid</Text>
+              <BuildBanner
+                tierLetter="A"
+                build="Tornado"
+                skillPix={[
+                  { src: require(`../assets/Drod/CycloneArmor.png`) },
+                  { src: require(`../assets/Drod/Twister.png`) },
+                  { src: require(`../assets/Drod/Tornado.png`) },
+                  { src: require(`../assets/Drod/Hurricane.png`) },
+                  { src: require(`../assets/Drod/OakSage.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="A"
+                build="Fire Druid"
+                skillPix={[
+                  { src: require(`../assets/Drod/Firestorm.png`) },
+                  { src: require(`../assets/Drod/MoltenBoulder.png`) },
+                  { src: require(`../assets/Drod/Fissure.png`) },
+                  { src: require(`../assets/Drod/Volcano.png`) },
+                  { src: require(`../assets/Drod/Armageddon.png`) },
+                  { src: require(`../assets/Drod/OakSage.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="Rabies Druid"
+                skillPix={[
+                  { src: require(`../assets/Drod/Rabies.png`) },
+                  { src: require(`../assets/Drod/PoisonCreeper.png`) },
+                  { src: require(`../assets/Drod/Lycanthropy.png`) },
+                  { src: require(`../assets/Drod/HeartofWolverine.png`) },
+                  { src: require(`../assets/Drod/Werewolf.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="Werewolf Druid"
+                skillPix={[
+                  { src: require(`../assets/Drod/Fury.png`) },
+                  { src: require(`../assets/Drod/Hurricane.png`) },
+                  { src: require(`../assets/Drod/Lycanthropy.png`) },
+                  { src: require(`../assets/Drod/HeartofWolverine.png`) },
+                  { src: require(`../assets/Drod/Werewolf.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="Full Zoo Druid"
+                skillPix={[
+                  { src: require(`../assets/Drod/Raven.png`) },
+                  { src: require(`../assets/Drod/SummonDireWolf.png`) },
+                  { src: require(`../assets/Drod/SummonSpiritWolf.png`) },
+                  { src: require(`../assets/Drod/SummonGrizzly.png`) },
+                  { src: require(`../assets/Drod/HeartofWolverine.png`) },
+                  { src: require(`../assets/Drod/CarrionVine.png`) },
+                ]}
+              />
+              <BuildBanner
+                tierLetter="B"
+                build="WhereBear"
+                skillPix={[
+                  { src: require(`../assets/Drod/Werebear.png`) },
+                  { src: require(`../assets/Drod/Lycanthropy.png`) },
+                  { src: require(`../assets/Drod/FireClaws.png`) },
+                  { src: require(`../assets/Drod/Firestorm.png`) },
+                  { src: require(`../assets/Drod/Rabies.png`) },
+                  { src: require(`../assets/Drod/Fury.png`) },
+                  { src: require(`../assets/Drod/Hunger.png`) },
+                ]}
+              />
             </View>
           </ScrollView>
         </SafeAreaView>
@@ -344,7 +534,7 @@ function BuildsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? 80 : 0,
+    paddingTop: Platform.OS === "android" ? 50 : 0,
     flex: 1,
     alignContent: "center",
     alignItems: "center",
