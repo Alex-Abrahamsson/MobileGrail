@@ -1,0 +1,18 @@
+{
+    "Blizzard": [
+        {"Stats": [
+            {"Strenght": "90"},
+            {"Dexterity": "25"},
+            {"Vitality": "MAX"},
+            {"Energy": "40"}
+        ]}
+    ],
+    "MeteOrb": [
+        {"Stats": [
+            {"Strenght": "83"},
+            {"Dexterity": "25"},
+            {"Vitality": "MAX"},
+            {"Energy": "40"}
+        ]}
+    ]
+}

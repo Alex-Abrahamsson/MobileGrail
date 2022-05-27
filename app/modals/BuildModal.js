@@ -9,12 +9,14 @@ import {
   ScrollView
 } from "react-native";
 import colors from "../config/colors";
+import Builds from "../data/Builds.js";
 
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT_MODAL = Dimensions.get("window").height;
 
 
 const BuildModal = (props) => {
+    const activeBuild = Builds.MeteOrb;// MeteOrb need to change dynamicly With "props.buildName"
 
 
     closeModal = (bool, data) => {
@@ -36,18 +38,35 @@ const BuildModal = (props) => {
       }
     };
 
-
     return (
       <ScrollView>
         <View style={styles.container}>
           <View style={[styles.modal, getBorderColor(props.borderColor)]}>
             <View style={styles.buttonsView}>
-                <Text style={{color: 'peru'}}>{props.buildName}</Text>
+              <Text style={{ color: "peru" }}>{props.buildName}</Text>
+              <FlatList
+                data={activeBuild.Stats}
+                renderItem={({ item, index }) => (
+                  <Text key={index} style={{ color: "white" }}>
+                    {item}
+                  </Text>
+                )}
+              />
+              <FlatList
+                data={activeBuild.Gear}
+                renderItem={({ item, index }) => (
+                  <Text key={index} style={{ color: "white" }}>
+                    {item}
+                  </Text>
+                )}
+              />
 
-
-                <Pressable style={styles.modalClose} onPress={() => closeModal(false, "Ok")}>
-                  <Text style={styles.text}>Close</Text>
-                </Pressable>
+              <Pressable
+                style={styles.modalClose}
+                onPress={() => closeModal(false, "Ok")}
+              >
+                <Text style={styles.text}>Close</Text>
+              </Pressable>
             </View>
           </View>
         </View>
@@ -88,7 +107,7 @@ const styles = StyleSheet.create({
   },
   modalClose: {
     position: "absolute",
-    bottom: -735,
+    bottom: -635,
     borderColor: colors.GoldBorder,
     borderWidth: 2,
     borderRadius: 13,

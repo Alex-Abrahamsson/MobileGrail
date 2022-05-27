@@ -47,7 +47,7 @@ function BuildsScreen({ navigation }) {
               <BuildBanner
                 class="Sorceress"
                 tierLetter="A"
-                build="Blizzard Build"
+                build="Blizzard"
                 skillPix={[
                   { src: require(`../assets/Sorc/Blizzard.png`), points: "20"},
                   { src: require(`../assets/Sorc/FrostNova.png`), points: "20"},
@@ -62,7 +62,7 @@ function BuildsScreen({ navigation }) {
               <BuildBanner
                 class="Sorceress"
                 tierLetter="A"
-                build="Fire MeteOrb"
+                build="MeteOrb"
                 skillPix={[
                   { src: require(`../assets/Sorc/FireBolt.png`), points: "1"},
                   { src: require(`../assets/Sorc/FireBall.png`), points: "20"},
