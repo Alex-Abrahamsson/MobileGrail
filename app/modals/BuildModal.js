@@ -16,8 +16,22 @@ const HEIGHT_MODAL = Dimensions.get("window").height;
 
 
 const BuildModal = (props) => {
-    const activeBuild = Builds.MeteOrb;// MeteOrb need to change dynamicly With "props.buildName"
+    let activeBuild = getActiveBuild(props.buildName);
 
+    function getActiveBuild(build) {
+      switch (build) {
+        case "Blizzard":
+          return (activeBuild = Builds.Blizzard);
+        case "MeteOrb":
+          return (activeBuild = Builds.MeteOrb);
+        case "Frozen Orb":
+          return (activeBuild = Builds.FrozenOrb);
+        case "Hammerdin":
+          return (activeBuild = Builds.Hammerdin);
+        default:
+          return (activeBuild = Builds.None);
+      }
+    }
 
     closeModal = (bool, data) => {
         props.changeModalVisible(bool);
@@ -39,38 +53,39 @@ const BuildModal = (props) => {
     };
 
     return (
-      <ScrollView>
-        <View style={styles.container}>
-          <View style={[styles.modal, getBorderColor(props.borderColor)]}>
-            <View style={styles.buttonsView}>
-              <Text style={{ color: "peru" }}>{props.buildName}</Text>
-              <FlatList
-                data={activeBuild.Stats}
-                renderItem={({ item, index }) => (
-                  <Text key={index} style={{ color: "white" }}>
-                    {item}
-                  </Text>
-                )}
-              />
-              <FlatList
-                data={activeBuild.Gear}
-                renderItem={({ item, index }) => (
-                  <Text key={index} style={{ color: "white" }}>
-                    {item}
-                  </Text>
-                )}
-              />
-
-              <Pressable
-                style={styles.modalClose}
-                onPress={() => closeModal(false, "Ok")}
-              >
-                <Text style={styles.text}>Close</Text>
-              </Pressable>
-            </View>
+      <View style={styles.container}>
+        <View style={[styles.modal, getBorderColor(props.borderColor)]}>
+          <View style={styles.buttonsView}>
+            <Text style={{ color: "peru" }}>{props.buildName}</Text>
+          </View>
+          <View style={styles.statsView}>
+            <FlatList
+              data={activeBuild.Stats}
+              renderItem={({ item, index }) => (
+                <Text key={index} style={styles.statText}>
+                  {item}
+                </Text>
+              )}
+            />
+          </View>
+          <View style={styles.gearView}>
+            <FlatList
+              data={activeBuild.Gear}
+              renderItem={({ item, index }) => (
+                <Text key={index} style={{ color: "white" }}>
+                  {item}
+                </Text>
+              )}
+            />
           </View>
         </View>
-      </ScrollView>
+        <Pressable
+          style={styles.modalClose}
+          onPress={() => closeModal(false, "Ok")}
+        >
+          <Text style={styles.text}>Close</Text>
+        </Pressable>
+      </View>
     );
 }
 
@@ -107,12 +122,21 @@ const styles = StyleSheet.create({
   },
   modalClose: {
     position: "absolute",
-    bottom: -635,
+    bottom: 6,
     borderColor: colors.GoldBorder,
     borderWidth: 2,
     borderRadius: 13,
     paddingHorizontal: 153,
   },
+  statsView: {
+    paddingVertical:15
+  },
+  statText:{
+    color:"white"
+  },
+  gearView: {
+
+  }
 });
 
 export {BuildModal};
