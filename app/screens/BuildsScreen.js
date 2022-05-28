@@ -444,7 +444,7 @@ function BuildsScreen({ navigation }) {
               <BuildBanner
                 class="Assassin"
                 tierLetter="A"
-                build="Light Trapper"
+                build="Trapsin"
                 skillPix={[
                   { src: require(`../assets/Assa/FireBlast.png`), points: "20"},
                   { src: require(`../assets/Assa/ShockWeb.png`), points: "20"},

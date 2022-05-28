@@ -18,6 +18,7 @@ const HEIGHT_MODAL = Dimensions.get("window").height;
 const BuildModal = (props) => {
     let activeBuild = getActiveBuild(props.buildName);
 
+    //Add builds here 
     function getActiveBuild(build) {
       switch (build) {
         case "Blizzard":
@@ -28,6 +29,10 @@ const BuildModal = (props) => {
           return (activeBuild = Builds.FrozenOrb);
         case "Hammerdin":
           return (activeBuild = Builds.Hammerdin);
+        case "Trapsin":
+          return (activeBuild = Builds.Trapsin);
+        case "Summoner":
+          return (activeBuild = Builds.Summoner);
         default:
           return (activeBuild = Builds.None);
       }
@@ -59,6 +64,7 @@ const BuildModal = (props) => {
             <Text style={{ color: "peru" }}>{props.buildName}</Text>
           </View>
           <View style={styles.statsView}>
+            <Text style={styles.sectionText}>Stats</Text>
             <FlatList
               data={activeBuild.Stats}
               renderItem={({ item, index }) => (
@@ -69,8 +75,20 @@ const BuildModal = (props) => {
             />
           </View>
           <View style={styles.gearView}>
+            <Text style={styles.sectionText}>Gear</Text>
             <FlatList
               data={activeBuild.Gear}
+              renderItem={({ item, index }) => (
+                <Text key={index} style={{ color: "white" }}>
+                  {item}
+                </Text>
+              )}
+            />
+          </View>
+          <View style={styles.gearView}>
+            <Text style={styles.sectionText}>Merc</Text>
+            <FlatList
+              data={activeBuild.Merc}
               renderItem={({ item, index }) => (
                 <Text key={index} style={{ color: "white" }}>
                   {item}
@@ -136,6 +154,11 @@ const styles = StyleSheet.create({
   },
   gearView: {
 
+  },
+  sectionText: { 
+    color:"white",
+    fontSize:20,
+    textAlign: "center"
   }
 });
 
