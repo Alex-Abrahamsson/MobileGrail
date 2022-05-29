@@ -489,7 +489,7 @@ function BuildsScreen({ navigation }) {
               <BuildBanner
                 class="Druid"
                 tierLetter="A"
-                build="Tornado"
+                build="Wind Druid"
                 skillPix={[
                   { src: require(`../assets/Drod/CycloneArmor.png`), points: "20"},
                   { src: require(`../assets/Drod/Twister.png`), points: "20"},

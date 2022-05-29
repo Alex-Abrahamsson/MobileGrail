@@ -3,6 +3,7 @@ export default {
     Stats: ["No Data"],
     Gear: ["No Data"],
   },
+  // ============== Sorceress =================================
   Blizzard: {
     Stats: ["Strenght: 156", "Dexterity: 25", "Vitality: MAX", "Energy: 35"],
     Gear: [
@@ -75,6 +76,7 @@ export default {
       "Helm: Andariel's Visage, Socketed with a (Ral rune)",
     ],
   },
+  // ================= Paladin ===================================
   Hammerdin: {
     Stats: [
       "Strenght: 103",
@@ -104,6 +106,7 @@ export default {
       "Helm: Andariel's Visage, Socketed with a (Ral rune)",
     ],
   },
+  // ============== Assassin ===============================
   Trapsin: {
     Stats: ["Strenght: 150", "Dexterity: MIN", "Vitality: MAX", "Energy: MIN"],
     Gear: [
@@ -128,6 +131,7 @@ export default {
       "Helm: Andariel's Visage, Socketed with a (Ral rune)",
     ],
   },
+  // ============== Necromancer =================================
   Summoner: {
     Stats: ["Strenght: 150", "Dexterity: MIN", "Vitality: MAX", "Energy: MIN"],
     Gear: [
@@ -148,6 +152,31 @@ export default {
     Merc: [
       "Merc: Act2 (Might)",
       "Weapon: (Ethereal) Pride",
+      "Body Armor: (Ethereal) Fortitde",
+      "Helm: Andariel's Visage, Socketed with a (Ral rune)",
+    ],
+  },
+  // ================== Druid =======================================
+  WindDruid: {
+    Stats: ["Strenght: 156", "Dexterity: MIN", "Vitality: 250+", "Energy: MIN"],
+    Gear: [
+      "Weapon: Heart of the Oak OR Suicide Branch",
+      "Weapon Swap: Call To Arms + Spirit",
+      "Shield: Spirit",
+      "Body Armor: Enigma",
+      "Helm: Druid Pelt with +Tornado OR Circlet with +Elemental and Cast Rate",
+      "Gloves: Trang-Oul's Claws OR Magefist",
+      "Boots: (Ethereal) Sandstorm Trek OR Waterwalk",
+      "Belt: Arachnid Mesh",
+      "Ring 1: Bul-Kathos Wedding Band",
+      "Ring 2: Bul-Kathos Wedding Band",
+      "Amulet: Mara's Kaleidoscope OR Crafted amulet with Cast Rate",
+      "Charm 1: Hellfire Torch",
+      "Charm 2: Annihilus",
+    ],
+    Merc: [
+      "Merc: Act2 (Might) OR (Holy Freeze)",
+      "Weapon: (Ethereal) Insight OR The Reaper's Toll",
       "Body Armor: (Ethereal) Fortitde",
       "Helm: Andariel's Visage, Socketed with a (Ral rune)",
     ],

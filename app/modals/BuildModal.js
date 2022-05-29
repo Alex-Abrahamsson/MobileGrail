@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -6,7 +6,6 @@ import {
   Pressable,
   Dimensions,
   FlatList,
-  ScrollView
 } from "react-native";
 import colors from "../config/colors";
 import Builds from "../data/Builds.js";
@@ -33,6 +32,8 @@ const BuildModal = (props) => {
           return (activeBuild = Builds.Trapsin);
         case "Summoner":
           return (activeBuild = Builds.Summoner);
+        case "Wind Druid":
+          return (activeBuild = Builds.WindDruid);
         default:
           return (activeBuild = Builds.None);
       }
@@ -61,7 +62,7 @@ const BuildModal = (props) => {
       <View style={styles.container}>
         <View style={[styles.modal, getBorderColor(props.borderColor)]}>
           <View style={styles.buttonsView}>
-            <Text style={{ color: "peru" }}>{props.buildName}</Text>
+            <Text style={{ color: "peru", fontSize:22 }}>{props.buildName}</Text>
           </View>
           <View style={styles.statsView}>
             <Text style={styles.sectionText}>Stats</Text>
@@ -79,7 +80,7 @@ const BuildModal = (props) => {
             <FlatList
               data={activeBuild.Gear}
               renderItem={({ item, index }) => (
-                <Text key={index} style={{ color: "white" }}>
+                <Text key={index} style={styles.statText}>
                   {item}
                 </Text>
               )}
@@ -90,7 +91,7 @@ const BuildModal = (props) => {
             <FlatList
               data={activeBuild.Merc}
               renderItem={({ item, index }) => (
-                <Text key={index} style={{ color: "white" }}>
+                <Text key={index} style={styles.statText}>
                   {item}
                 </Text>
               )}
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   modal: {
-    height: HEIGHT_MODAL - 25,
+    height: HEIGHT_MODAL - 50,
     width: WIDTH - 30,
     paddingTop: 10,
     backgroundColor: "#000",
@@ -140,17 +141,17 @@ const styles = StyleSheet.create({
   },
   modalClose: {
     position: "absolute",
-    bottom: 6,
-    borderColor: colors.GoldBorder,
-    borderWidth: 2,
+    bottom: 9,
     borderRadius: 13,
     paddingHorizontal: 153,
+    paddingVertical:15
   },
   statsView: {
     paddingVertical:15
   },
   statText:{
-    color:"white"
+    color:"white",
+    paddingLeft:10
   },
   gearView: {
 
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     color:"white",
     fontSize:20,
     textAlign: "center"
-  }
+  },
 });
 
 export {BuildModal};
