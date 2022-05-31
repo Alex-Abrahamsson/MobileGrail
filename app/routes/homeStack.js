@@ -9,6 +9,7 @@ import UniquesScreen from "../screens/UniquesScreen";
 import SetsScreen from "../screens/SetsScreen";
 import RunewordsScreen from "../screens/RunewordsScreen";
 import BuildsScreen from "../screens/BuildsScreen";
+import CubeScreen from "../screens/CubeScreen";
 
 const screens = {
   Welcome: {
@@ -55,6 +56,13 @@ const screens = {
   },
   Builds: {
     screen: BuildsScreen,
+    headerMode: "none",
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+  Cube: {
+    screen: CubeScreen,
     headerMode: "none",
     navigationOptions: {
       headerShown: false,

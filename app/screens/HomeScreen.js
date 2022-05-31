@@ -110,6 +110,21 @@ export default function HomeScreen({navigation}) {
               </Text>
             </Pressable>
           </ImageBackground>
+
+          <ImageBackground
+            source={require(btnBackground)}
+            style={styles.mainButtons}
+            resizeMode="cover"
+          >
+            <Pressable
+              onPress={() => handleBtnClick("Cube")}
+              style={styles.mainButtons}
+            >
+              <Text style={[styles.buttonText, { color: colors.GoldBorder }]}>
+                Horadric Cube Recipes
+              </Text>
+            </Pressable>
+          </ImageBackground>
         </View>
 
         <StatusBar style="light" />
@@ -120,7 +135,7 @@ export default function HomeScreen({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? 80 : 0,
+    paddingTop: Platform.OS === "android" ? 60 : 0,
     flex: 1,
   },
   background: {
@@ -129,11 +144,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   header: {
-    flex: 2,
+    flex: 1.5,
     alignItems: "center",
   },
   main: {
-    flex: 7,
+    flex: 7.5,
     alignItems: "center",
   },
   footer: {
@@ -151,7 +166,6 @@ const styles = StyleSheet.create({
   headText: {
     color: "white",
     fontSize: 28,
-    padding: 20,
   },
   textz: {
     color: "white",
