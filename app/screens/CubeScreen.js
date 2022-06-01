@@ -10,14 +10,12 @@ import {
   Dimensions,
   ScrollView,
   Modal,
-  Image
+  Image,
 } from "react-native";
 import colors from "../config/colors";
 
 const backgroundImage = "../assets/GrailBg.jpg";
 const WIDTH = Dimensions.get("window").width;
-
-
 
 function CubeScreen({ navigation }) {
   return (
@@ -574,7 +572,12 @@ function CubeScreen({ navigation }) {
               </View>
             </View>
             <View style={[styles.bigSection, { flexDirection: "row" }]}>
-              <View style={{ flex: 2, flexDirection: "row" }}>
+              <View
+                style={{
+                  flex: 1,
+                  flexDirection: "row",
+                }}
+              >
                 <Image
                   source={require("../assets/Twisted_Essence_of_Suffering.gif")}
                   style={styles.essence}
@@ -592,7 +595,12 @@ function CubeScreen({ navigation }) {
                   style={styles.essence}
                 />
               </View>
-              <View style={{ flex: 1 }}>
+              <View
+                style={{
+                  flex: 1,
+                  alignItems: "center",
+                }}
+              >
                 <Image
                   source={require("../assets/Token_of_Absolution.gif")}
                   style={styles.essence}
@@ -600,13 +608,35 @@ function CubeScreen({ navigation }) {
               </View>
             </View>
 
+            <Text style={styles.headerText}>Rings & Amulets</Text>
+            <View style={[styles.bigSection, { flexDirection: "row" }]}>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.requirements}>Requirements</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.requirements}>Result</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.requirements}>Notes</Text>
+              </View>
+            </View>
+            <View style={[styles.bigSection, { flexDirection: "row" }]}>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.text}> 3 Magic Rings</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.text}>1 Magic Amulet</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.text}></Text>
+              </View>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
     </ImageBackground>
   );
-};
-
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -643,13 +673,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-end",
     justifyContent: "center",
-    backgroundColor: colors.Faded,
     paddingVertical: 3,
   },
   bigSection: {
     borderColor: colors.GoldBorder,
     borderWidth: 2,
     borderRadius: 5,
+    width: WIDTH - 20,
+    backgroundColor: colors.Faded,
   },
   requirements: {
     color: "red",
@@ -665,8 +696,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   rareItem: {
-      color:"yellow"
-  }
+    color: "yellow",
+  },
 });
 
 export default CubeScreen;
