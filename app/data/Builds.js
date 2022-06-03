@@ -2,6 +2,7 @@ export default {
   None: {
     Stats: ["No Data"],
     Gear: ["No Data"],
+    Merc: ["No Data"]
   },
   // ============== Sorceress =================================
   Blizzard: {

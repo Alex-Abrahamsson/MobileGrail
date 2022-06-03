@@ -29,6 +29,7 @@ function WelcomeScreen({ navigation}) {
       try {
         const jsonValue = JSON.stringify(newUser);
         AsyncStorage.setItem(email, jsonValue)
+        alert(`Successfully registered ${email}`);
       } catch (error) {
         console.log("Register error", error);
       }
